@@ -3,4 +3,11 @@
 body {
     background-color: $wild-color;
     color: $light-color;
+    margin:0;
+    padding: 0;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 4px);
 }
