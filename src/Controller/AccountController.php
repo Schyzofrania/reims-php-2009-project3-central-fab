@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CreationController extends AbstractController
+class AccountController extends AbstractController
 {
     /**
      * @Route("/creation", name="creation")
@@ -19,11 +19,11 @@ class CreationController extends AbstractController
     }
 
     /**
-     * @Route("/creation/step_2", name="creation_step_2")
+     * @Route("/creation/step2", name="creation_step_2")
      */
-    public function index2(): Response
+    public function makerOrFabManager(): Response
     {
-        return $this->render('creation/step_2.html.twig', [
+        return $this->render('creation/step2.html.twig', [
             'controller_name' => 'CreationController',
         ]);
     }
