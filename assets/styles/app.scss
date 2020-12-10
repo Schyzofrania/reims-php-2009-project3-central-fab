@@ -1,9 +1,10 @@
 @import 'variables.scss';
 
 body {
-    background-color: $wild-color;
+    background-color: $central-fab-color;
     color: $light-color;
-    margin:0;
+    margin: 0 auto;
+    cursor: default;
     padding: 0;
 }
 
@@ -11,3 +12,102 @@ iframe {
     width: 100%;
     height: calc(100vh - 4px);
 }
+
+/* BLOCK LEGALS - BEGIN */
+
+.block-legals {
+    display: flex;
+    // justify-content: flex-end;
+    justify-content: space-between;
+    width: 60%;
+    height: 10vh;
+}
+
+.block-legals a {
+    text-decoration: none;
+    font-family: 'saira semi condensed';
+    font-size: 24px;
+    font-weight: 500;
+    color: #5C677D;
+}
+
+.map {
+    color: red;
+}
+
+/* BLOCK LEGALS - END */
+
+/*
+ * GENERAL - END
+ **/
+
+/** HOMEPAGE - BEGIN **/
+
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.homepage-block-logo {
+    background-image: url('../images/logo-central-fab.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 25vh;
+    padding-top: 13%;
+    margin-top: 45%;
+    margin-bottom: 5%;
+}
+
+.homepage-block-logo div {
+    border-bottom: 3px solid #FFD6BA;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'saira semi condensed';
+    color: #5C677D;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.homepage-block-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 65vh;
+    margin-top: 6.5%;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C9F0FF;
+    border: 1px solid #C9F0FF;
+    border-radius: 10px;
+    width: 94%;
+    height: 90px;
+    padding: 2%;
+    margin-top: 25px;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+.homepage-block-buttons a {
+    width: 95%;
+    text-decoration: none;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    color: #5C677D;
+}
+
+.block-button {
+    display: flex;
+    align-items: baseline;
+    width: 107%;
+}
+
+/*
+ * HOMEPAGE - END
+ */
