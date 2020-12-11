@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de compte - Étape 2{{parent()}}{% endblock %}
+
+{% block body %}
+    <div class="account-container">
+        <div class="account-block-back">
+            <div>
+                <span>&#60;</span>
+            </div>
+            <div>
+                <a href="#">Back</a>
+            </div>
+        </div>
+        <div class="account-block-title">
+            <div>Création de compte</div>
+        </div>
+        <div class="account-block-buttons">
+            <div class="block-button">
+                <a href="#"><div class="button">Fab Manager</div></a>
+                <div class="tooltip-button-1">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button-1"><br>Vous dirigez un FabLab et souhaitez avoir plus de visibilité, le profil FabManager est pour vous.</span>
+                </div>
+            </div>
+            <div class="block-button">
+                <a href="#"><div class="button">Maker</div></a>
+                <div class="tooltip-button-2">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button-2"><br>Vous avez une âme de créatif ?<br>Que vous soyez amateur ou professionnel, le profil Maker est fait pour vous.</span>
+                </div>
+            </div>
+        </div>
+        <div class="block-legals">
+            <div>
+                <a href="#">Mentions légales</a>
+            </div>
+    </div>
+{% endblock %}
