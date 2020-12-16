@@ -20,11 +20,11 @@ class MapController extends AbstractController
      */
     public function index(): Response
     {
-        $FablabRepository = $this->getDoctrine()
+        $fablabRepository = $this->getDoctrine()
              ->getRepository(Fablab::class)
              ->findAll();
 
-        if (!$FablabRepository) {
+        if (!$fablabRepository) {
             throw $this->createNotFoundException(
                 'No Fablab found in Falab\'s table.'
             );
@@ -34,14 +34,14 @@ class MapController extends AbstractController
         $nominatim = new Nominatim($url);
 
         $data = [];
-        for($i = 0; $i < count($FablabRepository); $i++) {
+        for ($i = 0; $i < count($fablabRepository); $i++) {
             $search = $nominatim->newSearch();
-            $mapAddress = $search->query($FablabRepository[$i]->getAdress());
+            $mapAddress = $search->query('' . $fablabRepository[$i]->getAdress() . '');
             $data[] = $nominatim->find($mapAddress);
         }
 
         return $this->render('map/index.html.twig', [
-            'cities' => $FablabRepository,
+            'cities' => $fablabRepository,
             'maps' => $data,
         ]);
     }
