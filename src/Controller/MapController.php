@@ -34,8 +34,7 @@ class MapController extends AbstractController
         $nominatim = new Nominatim($url);
 
         $data = [];
-        foreach($fablabRepository as $address)
-        {
+        foreach ($fablabRepository as $address) {
             $search = $nominatim->newSearch();
             $mapAddress = $search->query('' . $address->getAdress() . '');
             $data[] = $nominatim->find($mapAddress);
