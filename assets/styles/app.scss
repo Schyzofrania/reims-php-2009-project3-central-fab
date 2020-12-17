@@ -17,7 +17,7 @@ body {
 
 .block-legals {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 60%;
     height: 10vh;
 }
@@ -64,56 +64,42 @@ body {
     visibility: visible;
 }
 
-.block-button .tooltip-button-1 a, .block-button .tooltip-button-2 a {
+.block-button .tooltip-button a {
     color: #FFD6BA;
 }
 
-.block-button .tooltip-button-1 a:hover, .block-button .tooltip-button-2 a:hover {
+.block-button .tooltip-button a:hover {
     color: #5C677D;
 }
 
-.tooltip-button-1, .tooltip-button-2 {
+.tooltip-button {
     position: relative;
 }
 
-.tooltip-button-1 .tooltiptext-button-1 {
+.tooltip-button .tooltiptext-button {
     visibility: hidden;
-    width: 2912%;
-    height: 480%;
+    width: 56%;
+    height: 8%;
     background-color: #5C677D;
     color: #FFF;
     text-align: center;
     border-radius: 10px;
     padding: 5px 20px;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    top: -190px;
-    left: -2849%;
+    top: 43%;
+    left: 26%;
     margin-left: -60px;
     margin-right: 50%;
     font-size: 20px;
 }
 
-.tooltip-button-2 .tooltiptext-button-2 {
-    visibility: hidden;
-    width: 2912%;
-    height: 480%;
-    background-color: #5C677D;
-    color: #FFF;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px 20px;
-    position: absolute;
-    z-index: 1;
-    top: -291px;
-    left: -2849%;
-    margin-left: -60px;
-    margin-right: 50%;
-    font-size: 20px;
-}
-
-.tooltip-button-1:hover .tooltiptext-button-1, .tooltip-button-2:hover .tooltiptext-button-2 {
+.tooltip-button:hover .tooltiptext-button {
     visibility: visible;
+}
+
+.block-button.input .tooltip-button {
+    margin-left: 2%;
 }
 
 /* TOOLTIP - END */
@@ -290,11 +276,66 @@ body {
     width: 107%;
 }
 
-.tooltip-button-1, .tooltip-button-2 {
+.tooltip-button {
     width: 3%;
     height: 25px;
+}
+
+.block-button input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C9F0FF;
+    border: 1px solid #C9F0FF;
+    border-radius: 10px;
+    height: 50px;
+    padding: 2%;
+    margin-top: 25px;
+    text-decoration: none;
+    width: 89%;
+    font-size: 36px;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    color: #5C677D;
+    text-align: center;
+}
+
+.tooltip-button {
+    margin-left: 2%;
+}
+
+.block-button input:focus {
+    outline: none;
 }
 
 /*
  * ACCOUNT CREATION (page 55) - END
  */
+
+ /** NEXT BUTTON - BEGIN **/
+
+.account-block-next {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    margin-top: 10%;
+}
+
+.account-block-next-button {
+    text-decoration: none;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    background-color: #FFD6BA;
+    color: #5C677D;
+    border: 2px solid #FFD6BA;
+    border-radius: 10px;
+    padding: 16%;
+    width: 120px;
+    font-size: 27px;
+}
+
+.account-block-next-button:hover {
+    cursor: pointer;
+}
+
+/** NEXT BUTTON - END **/

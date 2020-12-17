@@ -20,7 +20,7 @@ class Fablab
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=14)
      */
     private $siret;
 
@@ -32,7 +32,7 @@ class Fablab
     /**
      * @ORM\Column(type="text")
      */
-    private $adress;
+    private $address;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="reservations")
@@ -44,6 +44,31 @@ class Fablab
      * @ORM\JoinTable(name="creation")
      */
     private $creation;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mail;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $schedule;
 
     public function __construct()
     {
@@ -80,14 +105,14 @@ class Fablab
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(string $adress): self
+    public function setAddress(string $address): self
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
@@ -136,6 +161,66 @@ class Fablab
     public function removeCreation(User $creation): self
     {
         $this->creation->removeElement($creation);
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getSchedule(): ?string
+    {
+        return $this->schedule;
+    }
+
+    public function setSchedule(string $schedule): self
+    {
+        $this->schedule = $schedule;
 
         return $this;
     }
