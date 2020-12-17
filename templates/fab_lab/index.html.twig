@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de FabLab{{parent()}}{% endblock %}
+
+{% block body %}
+    <div class="account-container">
+        <div class="account-block-back">
+            <div>
+                <span>&#60;</span>
+            </div>
+            <div>
+                <a href="{{ path('creation') }}">Back</a>
+            </div>
+        </div>
+        <div class="account-block-title">
+            <div>Création de FabLab</div>
+        </div>
+        <div class="account-block-buttons">
+            {{ include('fab_lab/_form.html.twig') }}
+        </div>
+        <div class="block-legals">
+            <div>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </div>
+   {# <a href="{{ path('home') }}">Retour</a> #}
+{% endblock %}
