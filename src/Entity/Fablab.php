@@ -56,19 +56,19 @@ class Fablab
     private $city;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $schedule;
+
+    /**
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mail;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $schedule;
 
     public function __construct()
     {
@@ -189,12 +189,24 @@ class Fablab
         return $this;
     }
 
+    public function getSchedule(): ?string
+    {
+        return $this->schedule;
+    }
+
+    public function setSchedule(string $schedule): self
+    {
+        $this->schedule = $schedule;
+
+        return $this;
+    }
+
     public function getPhone(): ?string
     {
         return $this->phone;
     }
 
-    public function setPhone(string $phone): self
+    public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
 
@@ -206,21 +218,9 @@ class Fablab
         return $this->mail;
     }
 
-    public function setMail(string $mail): self
+    public function setMail(?string $mail): self
     {
         $this->mail = $mail;
-
-        return $this;
-    }
-
-    public function getSchedule(): ?string
-    {
-        return $this->schedule;
-    }
-
-    public function setSchedule(string $schedule): self
-    {
-        $this->schedule = $schedule;
 
         return $this;
     }
