@@ -5,6 +5,12 @@
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
     <title>{% block title %} - Central Fab{% endblock %}</title>
     {% block stylesheets %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
@@ -13,13 +19,8 @@
 {% block body %}{% endblock %}
 
 {% block javascripts %}
+
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
-<style>
-    body{
-        margin: 0;
-        padding: 0;
-    }
-</style>
 </body>
 </html>
