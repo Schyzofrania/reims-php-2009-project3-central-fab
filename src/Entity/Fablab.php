@@ -20,7 +20,7 @@ class Fablab
     private $id;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @ORM\Column(type="string", length=14)
      */
     private $siret;
 
@@ -54,6 +54,21 @@ class Fablab
      * @ORM\Column(type="string", length=255)
      */
     private $city;
+
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mail;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $schedule;
 
     public function __construct()
     {
@@ -170,6 +185,42 @@ class Fablab
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getSchedule(): ?string
+    {
+        return $this->schedule;
+    }
+
+    public function setSchedule(string $schedule): self
+    {
+        $this->schedule = $schedule;
 
         return $this;
     }

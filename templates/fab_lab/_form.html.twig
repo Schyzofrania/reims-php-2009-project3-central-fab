@@ -1,37 +1,37 @@
 {{ form_start (form) }}
     <div class="block-button input">
         {{ form_widget(form.name, {'attr': {'placeholder': 'Nom du FabLab'}}) }}
-        <div class="tooltip-button-4">
+        <div class="tooltip-button">
             <a href="#">&#9432;</a>
-            <span class="tooltiptext-button-4"><br>Veuillez renseigner le nom du FabLab</span>
+            <span class="tooltiptext-button"><br>Veuillez renseigner le nom du FabLab</span>
         </div>
 	</div>
     <div class="block-button input">
         {{ form_widget(form.city, {'attr': {'placeholder': 'Ville du FabLab'}}) }}
-        <div class="tooltip-button-5">
+        <div class="tooltip-button">
             <a href="#">&#9432;</a>
-            <span class="tooltiptext-button-5"><br>Veuillez renseigner la ville du FabLab</span>
+            <span class="tooltiptext-button"><br>Veuillez renseigner la ville du FabLab</span>
         </div>
 	</div>
     <div class="block-button input">
         {{ form_widget(form.siret, {'attr': {'placeholder': 'Numéro de Siret'}}) }}
-        <div class="tooltip-button-6">
+        <div class="tooltip-button">
             <a href="#">&#9432;</a>
-            <span class="tooltiptext-button-6"><br>Veuillez renseigner le numéro de Siret du FabLab</span>
+            <span class="tooltiptext-button"><br>Veuillez renseigner le numéro de Siret du FabLab</span>
         </div>
     </div>
     <div class="block-button input">
         {{ form_widget(form.category, {'attr': {'placeholder': 'Catégorie'}}) }}
-        <div class="tooltip-button-7">
+        <div class="tooltip-button">
             <a href="#">&#9432;</a>
-            <span class="tooltiptext-button-7"><br>Veuillez renseigner la catégorie du FabLab</span>
+            <span class="tooltiptext-button"><br>Veuillez renseigner la catégorie du FabLab</span>
         </div>
     </div>
     <div class="block-button input">
         {{ form_widget(form.address, {'attr': {'placeholder': 'Adresse'}}) }}
-        <div class="tooltip-button-8">
+        <div class="tooltip-button">
             <a href="#">&#9432;</a>
-            <span class="tooltiptext-button-8"><br>Veuillez l'adresse complète du FabLab</span>
+            <span class="tooltiptext-button"><br>Veuillez l'adresse complète du FabLab</span>
         </div>
     </div>
     <div class="account-block-next">
@@ -39,64 +39,4 @@
             <a href="map"><input class="account-block-next-button" name="" type="submit" value="Créer"></a>
         </div>
     </div>
-
-
-
-
-{# <input type="submit" value="Add fablab"> #}
 {{ form_end (form) }}
-{#
-    <div class="account-container">
-        <div class="account-block-back">
-            <div>
-                <span>&#60;</span>
-            </div>
-            <div>
-                <a href="/">Back</a>
-            </div>
-        </div>
-        <div class="account-block-title">
-            <div>Création de FabLab</div>
-        </div>
-        <div class="account-block-buttons">
-            <div class="block-button">
-                <input type="text" id="form_name" name="form[name]" placeholder="Nom du FabLab" />
-                <div class="tooltip-button-3">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button-3"><br>Veuillez renseigner le nom du FabLab</span>
-                </div>
-            </div>
-            <div class="block-button">
-                <input type="text" id="form_siret" name="form[siret]" placeholder="Siret" />
-                <div class="tooltip-button-4">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button-4"><br>Veuillez renseigner le numéro de Siret du FabLab</span>
-                </div>
-            </div>
-            <div class="block-button">
-                <input type="text" id="form_category" name="form[category]" placeholder="Catégorie" />
-                <div class="tooltip-button-5">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button-5"><br>Veuillez renseigner la catégorie du FabLab</span>
-                </div>
-            </div>
-            <div class="block-button">
-                <input type="text" id="form_address" name="form[address]" placeholder="Adresse" />
-                <div class="tooltip-button-6">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button-6"><br>Veuillez l'adresse complète du FabLab</span>
-                </div>
-            </div>
-        </div>
-        <div class="account-block-next">
-            <div>
-                <a href="/"><input class="account-block-next-button" type="submit" value="Add fablab">{{ button_label|default('Créer') }}</a>
-            </div>
-        </div>
-        <div class="block-legals">
-            <div>
-                <a href="#">Mentions légales</a>
-            </div>
-        </div>
-    </div>
- #}

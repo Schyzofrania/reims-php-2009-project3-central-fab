@@ -36,7 +36,7 @@ class MapController extends AbstractController
         $data = [];
         foreach ($fablabs as $address) {
             $search = $nominatim->newSearch();
-            $mapAddress = $search->query('' . $address->getAdress() . '');
+            $mapAddress = $search->query('' . $address->getAddress() . '');
             $data[] = $nominatim->find($mapAddress);
         }
 
