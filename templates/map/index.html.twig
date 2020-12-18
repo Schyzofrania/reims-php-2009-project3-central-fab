@@ -3,6 +3,15 @@
 {% block title %}Hello MapController!{% endblock %}
 
 {% block body %}
+    <div class="deconnexion-btn">
+        <a href="/">Déconnexion</a>
+    </div>
+
+    <div class="container">
+        <input class="container_toggle" type="checkbox" id="switch" name="mode">
+        <label onclick="myFunction()" for="switch">Toggle</label>
+    </div>
+
     <div id="mapid"></div>
 
     <script>
@@ -20,5 +29,12 @@
     {% for map in maps %}
     var marker = L.marker([{{ map.0.lat }}, {{ map.0.lon }}]).addTo(mymap);
     {% endfor %}
+
+    // Dark mode
+    function myFunction() {
+    var element = document.getElementById('mapid');
+    element.classList.toggle("dark-mode");
+    }
+
     </script>
 {% endblock %}
