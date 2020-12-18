@@ -10,7 +10,7 @@ body {
 
 #mapid {
     width: 100%;
-    height: calc(100vh - 5px);
+    height: calc(100.3vh - 5px);
 }
 
 /* BLOCK LEGALS - BEGIN */
@@ -256,6 +256,7 @@ body {
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
+    font-size: 36px;
 }
 
 .block-button {
@@ -328,3 +329,118 @@ body {
 }
 
 /** NEXT BUTTON - END **/
+
+/** MAP DARK MODE - BEGIN **/
+
+.container label {
+    background: #000;
+}
+
+.container {
+    margin-bottom: -22%;
+    padding-top: 17%;
+    position: relative;
+    z-index: 100;
+    float: right;
+    padding-right: 10%;
+}
+
+#mapid {
+    z-index: 99;
+}
+
+.dark-mode {
+    filter: invert(100%);
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 55px;
+    height: 30px;
+    background: var($lightBtn);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: '';
+    background: #037cb8;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  }
+
+  input:checked + label {
+    background: #FFD6BA;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  html.transition,
+  html.transition *,
+  html.transition *:before,
+  html.transition *:after {
+    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms!important;
+    transition-delay: 0!important;
+  }
+
+/** MAP DARK MODE - END **/
+
+
+/** DECONNECTION BUTTON - BEGIN **/
+
+.deconnexion-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.5%;
+    margin-right: 4%;
+    margin-bottom: -17%;
+    padding-top: 10%;
+}
+
+.deconnexion-btn a {
+    cursor: pointer;
+    z-index: 101;
+    border: 1px solid #FFD6BA;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #FFD6BA;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    font-size: 27px;
+    color: #037cb8;
+    text-decoration: none;
+}
+
+.deconnexion-btn a:hover {
+    background-color: red;
+    color: #000;
+}
+
+/** DECONNECTION BUTTON - END **/
