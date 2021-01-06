@@ -310,7 +310,7 @@ body {
     margin-top: 10%;
 }
 
-.account-block-next-button {
+.account-block-next-button, .btn.btn-lg.btn-primary {
     text-decoration: none;
     font-family: 'saira semi condensed';
     font-weight: 500;
@@ -318,8 +318,8 @@ body {
     color: #5C677D;
     border: 2px solid #FFD6BA;
     border-radius: 10px;
-    padding: 16%;
-    width: 150px;
+    padding: 10% 16%;
+    width: 360px;
     font-size: 36px;
     cursor: pointer;
 }
@@ -328,6 +328,21 @@ body {
     cursor: pointer;
 }
 
+.account-block-login {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10%;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alert.alert-danger {
+    color: #ff0000;
+    font-size: 24px;
+}
 /** NEXT BUTTON - END **/
 
 /** MAP DARK MODE - BEGIN **/
