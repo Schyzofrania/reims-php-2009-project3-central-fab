@@ -35,17 +35,6 @@ class Fablab
     private $address;
 
     /**
-     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="reservations")
-     */
-    private $reservation;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="creations")
-     * @ORM\JoinTable(name="creation")
-     */
-    private $creation;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
@@ -61,7 +50,7 @@ class Fablab
     private $schedule;
 
     /**
-     * @ORM\Column(type="string", length=15, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $phone;
 
@@ -69,6 +58,17 @@ class Fablab
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mail;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="reservations")
+     */
+    private $reservation;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="creations")
+     * @ORM\JoinTable(name="creation")
+     */
+    private $creation;
 
     public function __construct()
     {
@@ -81,12 +81,12 @@ class Fablab
         return $this->id;
     }
 
-    public function getSiret(): ?int
+    public function getSiret(): ?string
     {
         return $this->siret;
     }
 
-    public function setSiret(int $siret): self
+    public function setSiret(string $siret): self
     {
         $this->siret = $siret;
 
@@ -113,6 +113,66 @@ class Fablab
     public function setAddress(string $address): self
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getSchedule(): ?string
+    {
+        return $this->schedule;
+    }
+
+    public function setSchedule(?string $schedule): self
+    {
+        $this->schedule = $schedule;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(?string $mail): self
+    {
+        $this->mail = $mail;
 
         return $this;
     }
@@ -161,66 +221,6 @@ class Fablab
     public function removeCreation(User $creation): self
     {
         $this->creation->removeElement($creation);
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(string $city): self
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    public function getSchedule(): ?string
-    {
-        return $this->schedule;
-    }
-
-    public function setSchedule(string $schedule): self
-    {
-        $this->schedule = $schedule;
-
-        return $this;
-    }
-
-    public function getPhone(): ?string
-    {
-        return $this->phone;
-    }
-
-    public function setPhone(?string $phone): self
-    {
-        $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getMail(): ?string
-    {
-        return $this->mail;
-    }
-
-    public function setMail(?string $mail): self
-    {
-        $this->mail = $mail;
 
         return $this;
     }
