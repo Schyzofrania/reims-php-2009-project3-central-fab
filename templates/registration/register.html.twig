@@ -6,16 +6,60 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+    <div class="account-container">
+        <div class="account-block-back">
+            <div>
+                <span>&#60;</span>
+            </div>
+            <div>
+                <a href="{{ path('creation') }}">Back</a>
+            </div>
+        </div>
+        <div class="account-block-title">
+            <div>S'enregistrer</div>
+        </div>
 
-    <h1>S'enregistrer</h1>
+        {{ form_start(registrationForm) }}
+            <div class="block-button input">
+                {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Prénom'}}) }}
+                <div class="tooltip-button">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button"><br>Veuillez renseigner un Prénom</span>
+                </div>
+            </div>
+            <div class="block-button input">
+                {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Nom'}}) }}
+                <div class="tooltip-button">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button"><br>Veuillez renseigner un Nom</span>
+                </div>
+            </div>
+            <div class="block-button input">
+                {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+                <div class="tooltip-button">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button"><br>Veuillez renseigner un Courriel</span>
+                </div>
+            </div>
+            <div class="block-button input">
+                {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+                <div class="tooltip-button">
+                    <a href="#">&#9432;</a>
+                    <span class="tooltiptext-button"><br>Veuillez renseigner un Mot de passe</span>
+                </div>
+            </div>
+            {{ form_row(registrationForm.agreeTerms) }}
+            <div class="account-block-next">
+                <div>
+                    <button type="submit" class="account-block-next-button">Valider</button>
+                </div>
+            </div>
+        {{ form_end(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Prénom'}}) }}
-        {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Nom'}}) }}
-        {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
-        {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}, {label: 'Password'}) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Valider</button>
-    {{ form_end(registrationForm) }}
+        <div class="block-legals">
+            <div>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
