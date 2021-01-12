@@ -34,10 +34,16 @@ class MapController extends AbstractController
         $nominatim = new Nominatim($url);
 
         $data = [];
+        $count = 0;
         foreach ($fablabs as $address) {
             $search = $nominatim->newSearch();
             $mapAddress = $search->query('' . $address->getAddress() . '');
-            $data[] = $nominatim->find($mapAddress);
+            $result = $nominatim->find($mapAddress);
+            if (count($result) > 0) {
+                $data[] = [$result[0]];
+            }
+            $data[$count][1] = $fablabs[$count];
+            $count++;
         }
 
         return $this->render('map/index.html.twig', [
