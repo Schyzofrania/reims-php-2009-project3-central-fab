@@ -3,6 +3,7 @@
 {% block title %}Carte{{parent()}}{% endblock %}
 
 {% block body %}
+    {{dump(maps)}}
     <div class="deconnexion-btn">
         <a href="{{ path('app_logout') }}">Déconnexion</a>
     </div>
@@ -28,6 +29,7 @@
 
     {% for map in maps %}
     var marker = L.marker([{{ map.0.lat }}, {{ map.0.lon }}]).addTo(mymap);
+    marker.bindPopup("<p>" + "{{ map.1.name }}" + "</p>" + "<p>" + "{{ map.1.category }}" + "</p>" + "<p>" + "{{ map.1.address }}" + "</p>")
     {% endfor %}
 
     // Dark mode
