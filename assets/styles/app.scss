@@ -368,13 +368,7 @@ body {
     filter: invert(100%);
 }
 
-input[type=checkbox] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
-  }
-
-  label {
+label {
     cursor: pointer;
     text-indent: -9999px;
     width: 55px;
@@ -388,9 +382,9 @@ input[type=checkbox] {
     -moz-border-radius: 100px;
     border-radius: 100px;
     position: relative;
-  }
+}
 
-  label:after {
+label:after {
     content: '';
     background: #037cb8;
     width: 20px;
@@ -402,13 +396,13 @@ input[type=checkbox] {
     top: 5px;
     left: 4px;
    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
-  }
+}
 
-  input:checked + label {
+input:checked + label {
     background: #FFD6BA;
-  }
+}
 
-  input:checked + label:after {
+input:checked + label:after {
     left: calc(100% - 5px);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -417,13 +411,13 @@ input[type=checkbox] {
     transform: translateX(-100%);
   }
 
-  html.transition,
-  html.transition *,
-  html.transition *:before,
-  html.transition *:after {
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
     transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms!important;
     transition-delay: 0!important;
-  }
+}
 
 /** MAP DARK MODE - END **/
 
