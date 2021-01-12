@@ -123,6 +123,9 @@
     "egulias/email-validator": {
         "version": "2.1.23"
     },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.2"
+    },
     "gitonomy/gitlib": {
         "version": "v1.2.2"
     },
