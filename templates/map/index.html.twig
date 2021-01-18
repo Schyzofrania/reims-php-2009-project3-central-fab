@@ -26,9 +26,16 @@
         zoomOffset: -1
     }).addTo(mymap);
 
+    function nl2br (str, replaceMode, isXhtml) {
+        var breakTag = (isXhtml) ? '<br />' : '<br>';
+        var replaceStr = (replaceMode) ? '$1'+ breakTag : '$1'+ breakTag +'$2';
+        return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, replaceStr);
+    }
+
     {% for map in maps %}
     var marker = L.marker([{{ map.0.lat }}, {{ map.0.lon }}]).addTo(mymap);
-    marker.bindPopup("<p>" + "{{ map.1.name }}" + "</p>" + "<p>" + "{{ map.1.category }}" + "</p>" + "<p>" + "{{ map.1.address }}" + "</p>")
+    marker.bindPopup("<p>" + "{{ map.1.name }}" + "</p>" + "<p>" + "{{ map.1.category }}" + "</p>" + "<p>" + "{{ map.1.address }}" + "</p>"
+     + "<p>" + nl2br("{{ map.1.schedule }}") + "</p>" + "<p>" + "{{ map.1.mail }}" + "</p>" + "<p>" + "{{ map.1.phone }}" + "</p>")
     {% endfor %}
 
     // Dark mode
