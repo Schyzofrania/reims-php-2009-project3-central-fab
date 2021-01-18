@@ -75,6 +75,54 @@ class AppFixtures extends Fixture
         $manager->persist($fablab2);
 
 
+        $fablab3 = new Fablab();
+        $fablab3->setSiret(78042936100014);
+        $fablab3->setAddress('Esplanade André Malraux, 51100 Reims');
+        $fablab3->setCity('Reims');
+        $fablab3->setPhone('0326774141');
+        $fablab3->setMail('b.grisonnet@saintex-reims.com');
+        $fablab3->setName('St Exupéry');
+        $fablab3->setSchedule('Tous les mardis soirs : 17h30 > 21h30\nTous les jeudis soirs : 18h > 22h');
+        $fablab3->setCategory('C.A.O');
+        $manager->persist($fablab3);
+
+
+        $fablab4 = new Fablab();
+        $fablab4->setSiret(18004301001485);
+        $fablab4->setAddress('17 Boulevard de la Paix, 51100 Reims');
+        $fablab4->setCity('Reims');
+        $fablab4->setPhone('0326612020');
+        $fablab4->setMail('contact.atelier51@reseau-canope.fr');
+        $fablab4->setName('Atelier Canopé 51');
+        $fablab4->setSchedule('Mardi : 12h00 - 18h00\nMercredi : 9h00 - 18h00\nJeudi : 12h00 - 18h00\nVendredi : 10h00 - 13h00');
+        $fablab4->setCategory('C.A.O');
+        $manager->persist($fablab4);
+
+
+        $fablab5 = new Fablab();
+        $fablab5->setSiret(79231155700013);
+        $fablab5->setAddress('1 Place Paul Claudel, 51100 Reims');
+        $fablab5->setCity('Reims');
+        $fablab5->setPhone('0326029090');
+        $fablab5->setMail('');
+        $fablab5->setName('Recyc\'lab');
+        $fablab5->setSchedule('Permanences les mercredis : 9h à 17h\nTemporairement fermé durant la période COVID');
+        $fablab5->setCategory('C.A.O');
+        $manager->persist($fablab5);
+
+
+        $fablab6 = new Fablab();
+        $fablab6->setSiret(49395413500031);
+        $fablab6->setAddress('23 Rue Clément Ader, 51100 Reims');
+        $fablab6->setCity('Reims');
+        $fablab6->setPhone('0326506126');
+        $fablab6->setMail('contact@accustica.org');
+        $fablab6->setName('Accustica');
+        $fablab6->setSchedule('Pas d\'horaires durant le COVID');
+        $fablab6->setCategory('C.A.O');
+        $manager->persist($fablab6);
+
+
         $manager->flush();
     }
 }
