@@ -27,7 +27,7 @@ body {
 .block-legals a {
     text-decoration: none;
     font-family: 'saira semi condensed';
-    font-size: 36px;
+    font-size: 18px;
     font-weight: 500;
     color: #5C677D;
 }
@@ -123,7 +123,8 @@ body {
     background-image: url('../images/logo-central-fab.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 50%;
+    background-position: center;
+    width: 100%;
     height: 25vh;
     padding-top: 13%;
     margin-top: 45%;
@@ -156,11 +157,11 @@ body {
     border: 1px solid #C9F0FF;
     border-radius: 10px;
     width: 94%;
-    height: 100px;
+    height: 50px;
     padding: 2%;
     margin-top: 25px;
     text-decoration: none;
-    font-size: 44px;
+    font-size: 20px;
 }
 
 .homepage-block-buttons a {
@@ -214,13 +215,13 @@ body {
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
-    font-size: 36px;
+    font-size: 18px;
 }
 
 .account-block-back div span {
     display: flex;
     align-items: center;
-    font-size: 36px;
+    font-size: 18px;
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
@@ -238,7 +239,7 @@ body {
     text-align: center;
     font-family: 'saira semi condensed';
     color: #5C677D;
-    font-size: 45px;
+    font-size: 27px;
     font-weight: 500;
 }
 
@@ -277,12 +278,12 @@ body {
     background-color: #C9F0FF;
     border: 1px solid #C9F0FF;
     border-radius: 10px;
-    height: 100px;
+    height: 50px;
     padding: 2%;
     margin-top: 25px;
     text-decoration: none;
     width: 89%;
-    font-size: 44px;
+    font-size: 20px;
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
@@ -318,9 +319,9 @@ body {
     color: #5C677D;
     border: 2px solid #FFD6BA;
     border-radius: 10px;
-    padding: 10% 16%;
-    width: 360px;
-    font-size: 36px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -353,7 +354,7 @@ body {
 
 .container {
     margin-bottom: -22%;
-    padding-top: 17%;
+    padding-top: 6%;
     position: relative;
     z-index: 100;
     float: right;
@@ -362,6 +363,8 @@ body {
 
 #mapid {
     z-index: 99;
+    margin-top: -10vh;
+    height: 100vh;
 }
 
 .dark-mode {
@@ -424,13 +427,19 @@ html.transition *:after {
 
 /** DECONNECTION BUTTON - BEGIN **/
 
+#switch {
+    display: none;
+}
 .deconnexion-btn {
     display: flex;
     justify-content: flex-end;
-    margin-top: -0.5%;
+    height: 10vh;
+    position: relative;
+    z-index: 100;
+    margin-top: -3%;
     margin-right: 4%;
-    margin-bottom: -17%;
-    padding-top: 10%;
+    // margin-bottom: -17%;
+    padding-top: 3%;
 }
 
 .deconnexion-btn a {
@@ -438,11 +447,12 @@ html.transition *:after {
     z-index: 101;
     border: 1px solid #FFD6BA;
     padding: 2%;
+    margin-top: 4vh;
     border-radius: 10px;
     background-color: #FFD6BA;
     font-family: 'saira semi condensed';
     font-weight: 500;
-    font-size: 27px;
+    font-size: 20px;
     color: #037cb8;
     text-decoration: none;
 }
@@ -451,6 +461,8 @@ html.transition *:after {
     background-color: red;
     color: #000;
 }
+
+
 
 /** DECONNECTION BUTTON - END **/
 
