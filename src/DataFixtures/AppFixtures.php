@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
         $fablab->setPhone('0326358060');
         $fablab->setMail('contact@ufcv.fr');
         $fablab->setName('UFCV');
-        $fablab->setSchedule('Lundi au vendredi 9h-12h / 14h-17h');
+        $fablab->setSchedule('Lundi au vendredi: 9h-12h / 14h-17h');
         $fablab->setCategory('C.A.O');
         $manager->persist($fablab);
 
@@ -70,7 +70,7 @@ class AppFixtures extends Fixture
         $fablab2->setPhone('0326793570');
         $fablab2->setMail('contact-reims@cesi.fr');
         $fablab2->setName('Campus CESI');
-        $fablab2->setSchedule('Lundi au vendredi 8h-17h');
+        $fablab2->setSchedule('Lundi au vendredi: 8h-17h');
         $fablab2->setCategory('C.A.O');
         $manager->persist($fablab2);
 
@@ -82,7 +82,7 @@ class AppFixtures extends Fixture
         $fablab3->setPhone('0326774141');
         $fablab3->setMail('b.grisonnet@saintex-reims.com');
         $fablab3->setName('St Exupéry');
-        $fablab3->setSchedule('Tous les mardis soirs : 17h30 > 21h30\nTous les jeudis soirs : 18h > 22h');
+        $fablab3->setSchedule('Tous les mardis soirs: 17h30-21h30\nTous les jeudis soirs: 18h-22h');
         $fablab3->setCategory('C.A.O');
         $manager->persist($fablab3);
 
@@ -94,7 +94,7 @@ class AppFixtures extends Fixture
         $fablab4->setPhone('0326612020');
         $fablab4->setMail('contact.atelier51@reseau-canope.fr');
         $fablab4->setName('Atelier Canopé 51');
-        $fablab4->setSchedule('Mardi : 12h00 - 18h00\nMercredi : 9h00 - 18h00\nJeudi : 12h00 - 18h00\nVendredi : 10h00 - 13h00');
+        $fablab4->setSchedule('Mardi: 12h00-18h00\nMercredi: 9h00-18h00\nJeudi: 12h00-18h00\nVendredi: 10h00-13h00');
         $fablab4->setCategory('C.A.O');
         $manager->persist($fablab4);
 
@@ -106,7 +106,7 @@ class AppFixtures extends Fixture
         $fablab5->setPhone('0326029090');
         $fablab5->setMail('');
         $fablab5->setName('Recyc\'lab');
-        $fablab5->setSchedule('Permanences les mercredis : 9h à 17h\nTemporairement fermé durant la période COVID');
+        $fablab5->setSchedule('Permanences les mercredis: 9h à 17h\nTemporairement fermé durant la période COVID');
         $fablab5->setCategory('C.A.O');
         $manager->persist($fablab5);
 
