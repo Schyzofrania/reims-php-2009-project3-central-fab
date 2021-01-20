@@ -98,7 +98,7 @@ body {
     padding: 0% 5%;
 }
 
-.tooltip-button:hover .tooltiptext-button {
+.tooltip-button:hover .tooltiptext-button, .tooltip-button:active .tooltiptext-button {
     visibility: visible;
 }
 
