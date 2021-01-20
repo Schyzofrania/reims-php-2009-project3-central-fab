@@ -6,7 +6,7 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-    <div class="account-container">
+    <div class="registration-container">
         <div class="account-block-back">
             <div>
                 <span>&#60;</span>
@@ -15,46 +15,47 @@
                 <a href="{{ path('creation') }}">Back</a>
             </div>
         </div>
-        <div class="account-block-title">
+        <div class="registration-block-title">
             <div>S'enregistrer</div>
         </div>
-
-        {{ form_start(registrationForm) }}
-            <div class="block-button input">
-                {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Prénom'}}) }}
-                <div class="tooltip-button">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button"><br>Veuillez renseigner un Prénom</span>
+        <div class="account-block-buttons">
+            {{ form_start(registrationForm) }}
+                <div class="block-button input">
+                    {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Prénom'}}) }}
+                    <div class="tooltip-button">
+                        <a href="#">&#9432;</a>
+                        <span class="tooltiptext-button"><br>Veuillez renseigner un Prénom</span>
+                    </div>
                 </div>
-            </div>
-            <div class="block-button input">
-                {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Nom'}}) }}
-                <div class="tooltip-button">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button"><br>Veuillez renseigner un Nom</span>
+                <div class="block-button input">
+                    {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Nom'}}) }}
+                    <div class="tooltip-button">
+                        <a href="#">&#9432;</a>
+                        <span class="tooltiptext-button"><br>Veuillez renseigner un Nom</span>
+                    </div>
                 </div>
-            </div>
-            <div class="block-button input">
-                {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
-                <div class="tooltip-button">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button"><br>Veuillez renseigner un Courriel</span>
+                <div class="block-button input">
+                    {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+                    <div class="tooltip-button">
+                        <a href="#">&#9432;</a>
+                        <span class="tooltiptext-button"><br>Veuillez renseigner un Courriel</span>
+                    </div>
                 </div>
-            </div>
-            <div class="block-button input">
-                {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
-                <div class="tooltip-button">
-                    <a href="#">&#9432;</a>
-                    <span class="tooltiptext-button"><br>Veuillez renseigner un Mot de passe</span>
+                <div class="block-button input">
+                    {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+                    <div class="tooltip-button">
+                        <a href="#">&#9432;</a>
+                        <span class="tooltiptext-button"><br>Veuillez renseigner un Mot de passe</span>
+                    </div>
                 </div>
-            </div>
-            {{ form_row(registrationForm.agreeTerms) }}
-            <div class="account-block-next">
-                <div>
-                    <button type="submit" class="account-block-next-button">Valider</button>
+                {{ form_row(registrationForm.agreeTerms) }}
+                <div class="account-block-next">
+                    <div>
+                        <button type="submit" class="account-block-next-button">Valider</button>
+                    </div>
                 </div>
-            </div>
-        {{ form_end(registrationForm) }}
+            {{ form_end(registrationForm) }}
+        </div>
 
         <div class="block-legals">
             <div>
