@@ -79,21 +79,23 @@ body {
 }
 
 .tooltip-button .tooltiptext-button {
+    display: flex;
+    align-items: center;
     visibility: hidden;
-    width: 56%;
-    height: 8%;
+    width: 50%;
+    height: 14%;
     background-color: #5C677D;
     color: #FFF;
     text-align: center;
     border-radius: 10px;
-    padding: 5px 20px;
     position: fixed;
     z-index: 1;
-    top: 33.5%;
-    left: 26%;
+    top: 35%;
+    left: 36%;
     margin-left: -60px;
     margin-right: 50%;
-    font-size: 32px;
+    font-size: 13px;
+    padding: 0% 5%;
 }
 
 .tooltip-button:hover .tooltiptext-button {
@@ -231,6 +233,7 @@ body {
     width: 55%;
     height: 15vh;
     padding-top: 55%;
+    padding-bottom: 10%;
 }
 
 .account-block-title div {
@@ -239,7 +242,7 @@ body {
     text-align: center;
     font-family: 'saira semi condensed';
     color: #5C677D;
-    font-size: 27px;
+    font-size: 21px;
     font-weight: 500;
 }
 
@@ -257,7 +260,7 @@ body {
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
-    font-size: 36px;
+    font-size: 21px;
 }
 
 .block-button {
