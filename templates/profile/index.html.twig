@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="account-container">
+    <div class="account-block-back">
+        <span>&#60;</span>
+        <a href="{{ path('creation') }}">Back</a>
+    </div>
+    <div class="account-block-title">
+        {% if app.user %}
+            <h1>Bienvenue {{ app.user.firstname }}</h1>
+            {{ app.user.email }}
+            {{ form_start(profileForm) }}
+                <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(profileForm) }}
+
+            <a href="{{ path('creation') }}">Ajouter votre Fablab</a>
+
+            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        {% else %}
+            <a href="{{ path('app_login') }}">Se connecter</a>
+        {% endif %}
+    </div>
+    <div class="block-legals">
+        <a href="#">Mentions légales</a>
+    </div>
+</div>
+{% endblock %}

@@ -20,6 +20,10 @@ class MapController extends AbstractController
      */
     public function index(): Response
     {
+        if ($this->isGranted('ROLE_USER') == false) {
+            return $this->redirectToRoute('home');
+        }
+
         $fablabs = $this->getDoctrine()
              ->getRepository(Fablab::class)
              ->findAll();
