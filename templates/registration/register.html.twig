@@ -24,31 +24,33 @@
                     {{ form_row(registrationForm.first_name, {'attr': {'placeholder': 'Prénom'}}) }}
                     <div class="tooltip-button">
                         <a href="#">&#9432;</a>
-                        <span class="tooltiptext-button"><br>Veuillez renseigner un Prénom</span>
+                        <span class="tooltiptext-button"><br>Veuillez saisir votre prénom</span>
                     </div>
                 </div>
                 <div class="block-button input">
                     {{ form_row(registrationForm.last_name, {'attr': {'placeholder': 'Nom'}}) }}
                     <div class="tooltip-button">
                         <a href="#">&#9432;</a>
-                        <span class="tooltiptext-button"><br>Veuillez renseigner un Nom</span>
+                        <span class="tooltiptext-button"><br>Veuillez saisir votre nom</span>
                     </div>
                 </div>
                 <div class="block-button input">
                     {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
                     <div class="tooltip-button">
                         <a href="#">&#9432;</a>
-                        <span class="tooltiptext-button"><br>Veuillez renseigner un Courriel</span>
+                        <span class="tooltiptext-button"><br>Veuillez saisir votre courriel</span>
                     </div>
                 </div>
                 <div class="block-button input">
                     {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
                     <div class="tooltip-button">
                         <a href="#">&#9432;</a>
-                        <span class="tooltiptext-button"><br>Veuillez renseigner un Mot de passe</span>
+                        <span class="tooltiptext-button"><br>Veuillez saisir votre mot de passe</span>
                     </div>
                 </div>
-                {{ form_row(registrationForm.agreeTerms) }}
+                <div class="agree-block">
+                    {{ form_row(registrationForm.agreeTerms) }} Accepter les CGU
+                </div>
                 <div class="account-block-next">
                     <div>
                         <button type="submit" class="account-block-next-button">Valider</button>

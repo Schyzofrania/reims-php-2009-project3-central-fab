@@ -357,6 +357,11 @@ form .block-button {
     width: 107%;
 }
 
+.agree-block {
+    display: flex;
+    padding-top: 1vh;
+}
+
 .tooltip-button {
     margin-left: 2%;
 }
@@ -432,6 +437,10 @@ form .block-button {
     z-index: 99;
     margin-top: -10vh;
     height: 100vh;
+}
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
 }
 
 .dark-mode {
