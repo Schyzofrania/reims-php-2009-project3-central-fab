@@ -9,14 +9,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class ProfileController extends AbstractController
 {
     /**
      * @Route("/profile", name="profile")
      */
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
-    {
+    public function index(
+        Request $request,
+        UserPasswordEncoderInterface $passwordEncoder,
+        EntityManagerInterface $entityManager
+    ): Response {
         $user = $this->getUser();
 
         $formEmail = $this->createForm(ChangeEmailType::class, $user);
@@ -30,9 +34,15 @@ class ProfileController extends AbstractController
         }
 
         if ($formPassword->isSubmitted() && $formPassword->isValid()) {
+            $user->setPassword(
+                $passwordEncoder->encodePassword(
+                    $user,
+                    $formPassword->get('plainPassword')->getData()
+                )
+            );
+
             $entityManager->flush();
         }
-
 
         return $this->render('profile/index.html.twig', [
             'emailForm' => $formEmail->createView(),

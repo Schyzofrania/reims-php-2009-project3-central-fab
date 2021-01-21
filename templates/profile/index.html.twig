@@ -12,7 +12,7 @@
     font-weight: 500;
     font-size: 20px;
     height: 50px;
-    margin: 25px auto 0 auto;
+    margin: 10px 0 0;
     padding: 5px;
     text-align: center;
     width: 90%;
@@ -21,8 +21,8 @@
 .btn {
     -webkit-user-select: none;
     -moz-user-select: none;
-    background-color: #c9f0ff;
-    border: 1px solid #c9f0ff;
+    background-color: #ffd6ba;
+    border: 1px solid #ffd6ba;
     border-radius: .25rem;
     color: #5c677d;
     cursor: pointer;
@@ -54,57 +54,82 @@ li {
     list-style-type: none;
     width: 90%;
 }
+
+.box-infos {
+    border: 1px solid #c9f0ff;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0 20px 20px;
+    width: 80%;
+}
+
+.info-user {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.infos-data {
+    display: inline-block;
+    font-size: 13px;
+    width: 65%;
+}
 </style>
 <div class="account-container">
     <div class="account-block-back">
         <span>&#60;</span> <a href="{{ path('creation') }}">Retour</a>
     </div>
-        {% if app.user %}
-            <h1 style="font-size: 20px; margin-top: 100px;">Bienvenue {{ app.user.firstname }}</h1>
 
-            <div style="font-size: 13px; padding: 0 5px; width: 100%;">
-                <h2 style="font-size: 16px;">Mes Informations</h2>
+    {% if app.user %}
+        <h1 style="font-size: 20px; margin-top: 100px;">Bienvenue {{ app.user.firstname }}</h1>
 
-                <div>
-                    <div>
-                        <div style="display: inline-block; font-size: 13px; font-weight: bold; width: 30%;">Courriel</div>
-                        <div style="display: inline-block; font-size: 13px; width: 65%;">{{ app.user.email }}</div>
-                    </div>
-                    <div>
-                        <div style="display: inline-block; font-size: 13px; font-weight: bold; width: 30%;">Prénom</div>
-                        <div style="display: inline-block; font-size: 13px; width: 65%;">{{ app.user.firstname }}</div>
-                    </div>
-                    <div>
-                        <div style="display: inline-block; font-size: 13px; font-weight: bold; width: 30%;">Nom</div>
-                        <div style="display: inline-block; font-size: 13px; width: 65%;">{{ app.user.lastname }}</div>
-                    </div>
-                </div>
-            </div>
+        <div class="box-infos">
+            <h2 style="font-size: 16px;">Mes Informations</h2>
 
             <div>
+                <div>
+                    <div class="info-user">Courriel</div>
+                    <div class="infos-data">{{ app.user.email }}</div>
+                </div>
+                <div>
+                    <div class="info-user">Prénom</div>
+                    <div class="infos-data">{{ app.user.firstname }}</div>
+                </div>
+                <div>
+                    <div class="info-user">Nom</div>
+                    <div class="infos-data">{{ app.user.lastname }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
+            <div>Changer votre <strong>Courriel</strong></div>
             {{ form_start(emailForm) }}
-                <div class="block-button inputProfile">
-                    {{ form_row(emailForm.email, {'attr': {'placeholder': 'Votre Courriel'}}) }}
-                </div>
-                <button type="submit" class="btn">Mettre à jour</button>
+            <div class="inputProfile">
+                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Courriel'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
             {{ form_end(emailForm) }}
-            </div>
+        </div>
 
-            <div style="font-size: 13px; padding: 0 5px;">
+        <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
+            <div>Changer votre <strong>Mot de passe</strong></div>
             {{ form_start(passwordForm) }}
-                <div class="block-button inputProfile">
-                    {{ form_row(passwordForm.plainPassword , {'attr': {'placeholder': 'Votre Mot de passe'}}) }}
-                </div>
-                <button type="submit" class="btn">Mettre à jour</button>
-            {{ form_end(passwordForm) }}
+            <div class="inputProfile">
+                {{ form_row(passwordForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
             </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(passwordForm) }}
+        </div>
 
-            <a href="{{ path('creation') }}">Ajouter votre Fablab</a>
-
-            <a href="{{ path('app_logout') }}">Se déconnecter</a>
-        {% else %}
-            <a href="{{ path('app_login') }}">Se connecter</a>
+        {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+        <div style="margin-top: 40px;"><a href="{{ path('creation') }}" class="btn">Ajouter votre Fablab</a></div>
         {% endif %}
-    </div>
+
+        <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>
+    {% else %}
+        <div style="margin-top: 20px;"><a href="{{ path('app_login') }}">Se connecter</a></div>
+    {% endif %}
 </div>
 {% endblock %}

@@ -20,6 +20,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new User();
+        // Création d’un utilisateur de type “contributor”
         // $product = new Product();
         // $manager->persist($product);
         $user->setPassword($this->passwordEncoder->encodePassword(
@@ -49,6 +50,18 @@ class AppFixtures extends Fixture
             'adminpassword'
         ));
         $manager->persist($admin);
+
+        // Création d’un utilisateur de type “user”
+        $user = new User();
+        $user->setEmail('user@monsite.com');
+        $user->setRoles(['ROLE_USER']);
+        $user->setFirstName('Charlie');
+        $user->setLastName('Mandarine');
+        $user->setPassword($this->passwordEncoder->encodePassword(
+            $user,
+            'userpwd'
+        ));
+        $manager->persist($user);
 
 
         $fablab = new Fablab();
