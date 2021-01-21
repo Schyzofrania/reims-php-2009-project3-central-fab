@@ -19,7 +19,6 @@ class MailType extends AbstractType
             ->add('mail', EmailType::class)
             ->add('subject', TextareaType::class)
             ->add('html', TextareaType::class)
-            ->add('envoyer', SubmitType::class)
         ;
     }
 
