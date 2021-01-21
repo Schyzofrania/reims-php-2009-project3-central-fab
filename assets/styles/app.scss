@@ -27,7 +27,7 @@ body {
 .block-legals a {
     text-decoration: none;
     font-family: 'saira semi condensed';
-    font-size: 36px;
+    font-size: 18px;
     font-weight: 500;
     color: #5C677D;
 }
@@ -79,24 +79,69 @@ body {
 }
 
 .tooltip-button .tooltiptext-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
-    width: 56%;
-    height: 8%;
+    width: 50%;
+    height: 14%;
     background-color: #5C677D;
     color: #FFF;
     text-align: center;
     border-radius: 10px;
-    padding: 5px 20px;
     position: fixed;
     z-index: 1;
-    top: 33.5%;
-    left: 26%;
+    top: 35%;
+    left: 36%;
     margin-left: -60px;
     margin-right: 50%;
-    font-size: 32px;
+    font-size: 13px;
+    padding: 0% 5%;
 }
 
-.tooltip-button:hover .tooltiptext-button {
+.registration-container .tooltip-button .tooltiptext-button {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    width: 50%;
+    height: 10%;
+    background-color: #5C677D;
+    color: #FFF;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 23%;
+    left: 36%;
+    margin-left: -60px;
+    margin-right: 50%;
+    font-size: 13px;
+    padding: 0% 5%;
+    justify-content: center;
+}
+
+.block-icon a .tooltiptext-button {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    width: 20%;
+    height: 4.5%;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    bottom: 4%;
+    left: 34%;
+    margin-left: -60px;
+    margin-right: 50%;
+    font-size: 13px;
+    padding: 0% 5%;
+    justify-content: center;
+}
+
+.tooltip-button:hover .tooltiptext-button, .tooltip-button:active .tooltiptext-button, .block-icon a:hover .tooltiptext-button {
     visibility: visible;
 }
 
@@ -123,7 +168,8 @@ body {
     background-image: url('../images/logo-central-fab.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 50%;
+    background-position: center;
+    width: 100%;
     height: 25vh;
     padding-top: 13%;
     margin-top: 45%;
@@ -156,11 +202,11 @@ body {
     border: 1px solid #C9F0FF;
     border-radius: 10px;
     width: 94%;
-    height: 100px;
+    height: 50px;
     padding: 2%;
-    margin-top: 25px;
+    margin-top: 10px;
     text-decoration: none;
-    font-size: 44px;
+    font-size: 20px;
 }
 
 .homepage-block-buttons a {
@@ -185,7 +231,7 @@ body {
  * ACCOUNT CREATION (page 55) - BEGIN
  */
 
- .account-container {
+ .account-container, .registration-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,13 +260,13 @@ body {
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
-    font-size: 36px;
+    font-size: 18px;
 }
 
 .account-block-back div span {
     display: flex;
     align-items: center;
-    font-size: 36px;
+    font-size: 18px;
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
@@ -230,6 +276,7 @@ body {
     width: 55%;
     height: 15vh;
     padding-top: 55%;
+    padding-bottom: 17%;
 }
 
 .account-block-title div {
@@ -238,7 +285,24 @@ body {
     text-align: center;
     font-family: 'saira semi condensed';
     color: #5C677D;
-    font-size: 45px;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.registration-block-title {
+    width: 55%;
+    height: 15vh;
+    padding-top: 36%;
+    padding-bottom: 12%;
+}
+
+.registration-block-title div {
+    border-bottom: 3px solid #FFD6BA;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'saira semi condensed';
+    color: #5C677D;
+    font-size: 21px;
     font-weight: 500;
 }
 
@@ -256,7 +320,7 @@ body {
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
-    font-size: 36px;
+    font-size: 21px;
 }
 
 .block-button {
@@ -277,16 +341,49 @@ body {
     background-color: #C9F0FF;
     border: 1px solid #C9F0FF;
     border-radius: 10px;
-    height: 100px;
+    height: 50px;
     padding: 2%;
     margin-top: 25px;
     text-decoration: none;
     width: 89%;
-    font-size: 44px;
+    font-size: 20px;
     font-family: 'saira semi condensed';
     font-weight: 500;
     color: #5C677D;
     text-align: center;
+}
+
+.account-block-buttons .block-button input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C9F0FF;
+    border: 1px solid #C9F0FF;
+    border-radius: 10px;
+    height: 50px;
+    padding: 2%;
+    margin-top: 10px;
+    text-decoration: none;
+    width: 94%;
+    font-size: 20px;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    color: #5C677D;
+    text-align: center;
+}
+
+form .block-button {
+    display: flex;
+    align-items: center;
+    width: 107%;
+}
+
+.agree-block {
+    display: flex;
+    padding-top: 1vh;
+    font-family: 'saira semi condensed';
+    font-size: 15px;
+    color: #5C677D;
 }
 
 .tooltip-button {
@@ -318,9 +415,9 @@ body {
     color: #5C677D;
     border: 2px solid #FFD6BA;
     border-radius: 10px;
-    padding: 10% 16%;
-    width: 360px;
-    font-size: 36px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -353,7 +450,7 @@ body {
 
 .container {
     margin-bottom: -22%;
-    padding-top: 17%;
+    padding-top: 6%;
     position: relative;
     z-index: 100;
     float: right;
@@ -361,7 +458,36 @@ body {
 }
 
 #mapid {
+    display: flex;
+    align-items: flex-end;
     z-index: 99;
+    margin-top: -10vh;
+    height: 100vh;
+}
+
+#mapid .block-icon a {
+    z-index: 401;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 6vh;
+    margin-left: 3vh;
+    width: 6vh;
+}
+
+#mapid .block-icon .icon-account {
+    background-image: url('../images/user.svg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+#mapid .block-icon .icon-account:hover {
+    cursor: pointer;
+}
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
 }
 
 .dark-mode {
@@ -424,13 +550,19 @@ html.transition *:after {
 
 /** DECONNECTION BUTTON - BEGIN **/
 
+#switch {
+    display: none;
+}
 .deconnexion-btn {
     display: flex;
     justify-content: flex-end;
-    margin-top: -0.5%;
+    height: 10vh;
+    position: relative;
+    z-index: 100;
+    margin-top: -3%;
     margin-right: 4%;
-    margin-bottom: -17%;
-    padding-top: 10%;
+    // margin-bottom: -17%;
+    padding-top: 3%;
 }
 
 .deconnexion-btn a {
@@ -438,19 +570,23 @@ html.transition *:after {
     z-index: 101;
     border: 1px solid #FFD6BA;
     padding: 2%;
+    margin-top: 4vh;
     border-radius: 10px;
     background-color: #FFD6BA;
     font-family: 'saira semi condensed';
     font-weight: 500;
-    font-size: 27px;
+    font-size: 20px;
     color: #037cb8;
     text-decoration: none;
 }
 
 .deconnexion-btn a:hover {
-    background-color: red;
-    color: #000;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
 }
+
+
 
 /** DECONNECTION BUTTON - END **/
 
