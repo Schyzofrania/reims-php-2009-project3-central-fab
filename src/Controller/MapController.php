@@ -45,7 +45,6 @@ class MapController extends AbstractController
             $data[$count][1] = $fablabs[$count];
             $count++;
         }
-
         return $this->render('map/index.html.twig', [
             'cities' => $fablabs,
             'maps' => $data,
