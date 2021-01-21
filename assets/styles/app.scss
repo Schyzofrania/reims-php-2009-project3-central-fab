@@ -653,8 +653,11 @@ html.transition *:after {
 /** PopUp **/
 
 p{
-    font-size : 2.4em;
+    font-size : 2em;
+}
+.leaflet-popup-content > a {
+    font-size : 2em
 }
 .leaflet-popup-content{
-    padding: 4em;
+    padding: 2em;
 }
