@@ -273,7 +273,7 @@ body {
  * ACCOUNT CREATION (page 55) - BEGIN
  */
 
- .account-container, .registration-container, .fablab-step1-container, .fablab-step2-container {
+ .account-container, .registration-container, .fablab-step1-container, .fablab-step2-container, .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -348,6 +348,29 @@ body {
     font-weight: 500;
 }
 
+.contact-block-title {
+    width: 55%;
+    height: 5vh;
+    padding-top: 36%;
+}
+
+.contact-block-title div {
+    border-bottom: 3px solid #FFD6BA;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'saira semi condensed';
+    color: #5C677D;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.contact-container .account-block-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 65vh;
+}
+
 .account-block-buttons {
     display: flex;
     flex-direction: column;
@@ -395,7 +418,7 @@ body {
     text-align: center;
 }
 
-.account-block-buttons .block-button input {
+.account-block-buttons .block-button input, .account-block-buttons textarea {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -646,6 +669,34 @@ html.transition *:after {
     border: 1px solid #fff;
 }
 
+.send-block-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.redirect-map-btn, .send-deconnexion-btn {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.send-block-button .redirect-map-btn a, .send-block-button .send-deconnexion-btn a {
+    cursor: pointer;
+    z-index: 101;
+    border: 1px solid #FFD6BA;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #FFD6BA;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    font-size: 20px;
+    color: #037cb8;
+    text-decoration: none;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
 
 /** DECONNECTION BUTTON - END **/
@@ -660,4 +711,22 @@ p{
 }
 .leaflet-popup-content{
     padding: 2em;
+}
+
+
+/* SEND EMAIL */
+
+.send-container h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 20% 10%;
+    color: green;
+    background-color: #0080002b;
+    padding: 5%;
+}
+
+.send-container p {
+    font-size: 18px;
+    margin: 0% 10% 20% 10%;
+    text-align: justify;
 }
