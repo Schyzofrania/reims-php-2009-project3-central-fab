@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start (form) }}
+    <div class="block-button input">
+        {{ form_widget(form.toMail, {'attr': {'value': 'centralfab-343af0@inbox.mailtrap.io'}}) }}
+	</div>
+    <div class="block-button input">
+        {{ form_widget(form.mail, {'attr': {'placeholder': 'Votre Mail'}}) }}
+	</div>
+    <div class="block-button textarea">
+        {{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Mail'}}) }}
+	</div>
+    <div class="block-button textarea">
+        {{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}
+	</div>
+    <div class="account-block-next">
+        <div>
+            <a href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyé"></a>
+        </div>
+    </div>
+{{ form_end (form) }}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Votre mail a bien été envoyé</h1>
+    <a href="/map"><div class="button">Retourner sur la map</div></a>
+    <div class="deconnexion-btn">
+        <a href="{{ path('app_logout') }}">Déconnexion</a>
+    </div>
+{% endblock %}
