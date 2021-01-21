@@ -472,17 +472,11 @@ form .block-button {
     align-items: flex-end;
     height: 6vh;
     margin-left: 3vh;
+    margin-bottom: 3vh;
     width: 6vh;
 }
 
-#mapid .block-icon .icon-account {
-    background-image: url('../images/user.svg');
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-}
-
-#mapid .block-icon .icon-account:hover {
+#mapid .block-icon a:hover {
     cursor: pointer;
 }
 
