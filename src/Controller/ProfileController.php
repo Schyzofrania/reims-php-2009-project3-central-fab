@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ChangeEmailType;
+use App\Form\ChangePasswordType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,12 +22,21 @@ class ProfileController extends AbstractController
         $formEmail = $this->createForm(ChangeEmailType::class, $user);
         $formEmail->handleRequest($request);
 
+        $formPassword = $this->createForm(ChangePasswordType::class, $user);
+        $formPassword->handleRequest($request);
+
         if ($formEmail->isSubmitted() && $formEmail->isValid()) {
             $entityManager->flush();
         }
 
+        if ($formPassword->isSubmitted() && $formPassword->isValid()) {
+            $entityManager->flush();
+        }
+
+
         return $this->render('profile/index.html.twig', [
-            'profileForm' => $formEmail->createView()
+            'emailForm' => $formEmail->createView(),
+            'passwordForm' => $formPassword->createView(),
         ]);
     }
 }
