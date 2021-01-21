@@ -674,6 +674,14 @@ html.transition *:after {
     justify-content: space-around;
 }
 
+.contact-container .account-block-buttons .block-button input div {
+    width: 97%;
+}
+
+#mail_toMail {
+    font-size: 13px;
+}
+
 .redirect-map-btn, .send-deconnexion-btn {
     width: 45%;
     display: flex;
