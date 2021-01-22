@@ -1,5 +1,24 @@
 @import 'variables.scss';
 
+
+/*
+    Leaflet
+*/
+
+.leaflet-popup-content p {
+    margin: 10px 0;
+    font-size: 1.25em;
+}
+
+.leaflet-popup-content {
+    padding: 0 !important;
+}
+
+.leaflet-popup-content > a {
+    font-size: 1.25em !important;
+}
+
+
 body {
     background-color: $central-fab-color;
     color: $light-color;
