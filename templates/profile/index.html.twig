@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+.inputProfile input  {
+    background-color: #c9f0ff;
+    border: 1px solid #c9f0ff;
+    border-radius: 10px;
+    color: #5c677d;
+    display: block;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    font-size: 20px;
+    height: 50px;
+    margin: 10px 0 0;
+    padding: 5px;
+    text-align: center;
+    width: 90%;
+}
+
+.btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background-color: #ffd6ba;
+    border: 1px solid #ffd6ba;
+    border-radius: .25rem;
+    color: #5c677d;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: .25rem auto 0 auto;
+    padding: .375rem .75rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.block-button {
+    display: block !important;
+}
+
+ul {
+    color: red;
+    padding: 0;
+}
+
+li {
+    color: red;
+    display: block;
+    list-style-type: none;
+    width: 90%;
+}
+
+.box-infos {
+    border: 1px solid #c9f0ff;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0 20px 20px;
+    width: 80%;
+}
+
+.info-user {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.infos-data {
+    display: inline-block;
+    font-size: 13px;
+    width: 65%;
+}
+</style>
+<div class="account-container">
+    <div class="account-block-back">
+        <span>&#60;</span> <a href="{{ path('creation') }}">Retour</a>
+    </div>
+
+    {% if app.user %}
+        <h1 style="font-size: 20px; margin-top: 100px;">Bienvenue {{ app.user.firstname }}</h1>
+
+        <div class="box-infos">
+            <h2 style="font-size: 16px;">Mes Informations</h2>
+
+            <div>
+                <div>
+                    <div class="info-user">Courriel</div>
+                    <div class="infos-data">{{ app.user.email }}</div>
+                </div>
+                <div>
+                    <div class="info-user">Prénom</div>
+                    <div class="infos-data">{{ app.user.firstname }}</div>
+                </div>
+                <div>
+                    <div class="info-user">Nom</div>
+                    <div class="infos-data">{{ app.user.lastname }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
+            <div>Changer votre <strong>Courriel</strong></div>
+            {{ form_start(emailForm) }}
+            <div class="inputProfile">
+                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Courriel'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(emailForm) }}
+        </div>
+
+        <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
+            <div>Changer votre <strong>Mot de passe</strong></div>
+            {{ form_start(passwordForm) }}
+            <div class="inputProfile">
+                {{ form_row(passwordForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(passwordForm) }}
+        </div>
+
+        {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+        <div style="margin-top: 40px;"><a href="{{ path('creation') }}" class="btn">Ajouter votre Fablab</a></div>
+        {% endif %}
+
+        <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>
+    {% else %}
+        <div style="margin-top: 20px;"><a href="{{ path('app_login') }}">Se connecter</a></div>
+    {% endif %}
+</div>
+{% endblock %}

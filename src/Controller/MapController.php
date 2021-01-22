@@ -20,6 +20,10 @@ class MapController extends AbstractController
      */
     public function index(): Response
     {
+        if ($this->isGranted('ROLE_USER') == false) {
+            return $this->redirectToRoute('home');
+        }
+
         $fablabs = $this->getDoctrine()
              ->getRepository(Fablab::class)
              ->findAll();
@@ -45,7 +49,6 @@ class MapController extends AbstractController
             $data[$count][1] = $fablabs[$count];
             $count++;
         }
-
         return $this->render('map/index.html.twig', [
             'cities' => $fablabs,
             'maps' => $data,
