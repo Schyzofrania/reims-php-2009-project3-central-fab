@@ -39,6 +39,33 @@
     user-select: none;
 }
 
+.btn-map {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background-color: #c9f0ff;
+    border: 1px solid #c9f0ff;
+    border-radius: .25rem;
+    color: #5c677d;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: .25rem auto 0 auto;
+    padding: .375rem .75rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.account-block-back-map {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
 .block-button {
     display: block !important;
 }
@@ -77,12 +104,12 @@ li {
 }
 </style>
 <div class="account-container">
-    <div class="account-block-back">
-        <span>&#60;</span> <a href="{{ path('creation') }}">Retour</a>
+    <div class="account-block-back-map">
+        <a href="{{ path('map') }}" class="btn-map">Retour vers la carte</a>
     </div>
 
     {% if app.user %}
-        <h1 style="font-size: 20px; margin-top: 100px;">Bienvenue {{ app.user.firstname }}</h1>
+        <h1 style="font-size: 20px; margin-top: 80px;">Bienvenue {{ app.user.firstname }}</h1>
 
         <div class="box-infos">
             <h2 style="font-size: 16px;">Mes Informations</h2>
