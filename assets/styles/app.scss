@@ -139,6 +139,48 @@ body {
     justify-content: center;
 }
 
+.fablab-step1-container .tooltip-button .tooltiptext-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    width: 50%;
+    height: 12%;
+    background-color: #5C677D;
+    color: #FFF;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 23.5%;
+    left: 36%;
+    margin-left: -60px;
+    margin-right: 50%;
+    font-size: 13px;
+    padding: 0% 5%;
+}
+
+.fablab-step2-container .tooltip-button .tooltiptext-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    width: 50%;
+    height: 12%;
+    background-color: #5C677D;
+    color: #FFF;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 23.5%;
+    left: 36%;
+    margin-left: -60px;
+    margin-right: 50%;
+    font-size: 13px;
+    padding: 0% 5%;
+}
+
 .block-icon a .tooltiptext-button {
     display: flex;
     align-items: center;
@@ -250,7 +292,7 @@ body {
  * ACCOUNT CREATION (page 55) - BEGIN
  */
 
- .account-container, .registration-container {
+ .account-container, .registration-container, .fablab-step1-container, .fablab-step2-container, .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,14 +350,14 @@ body {
     font-weight: 500;
 }
 
-.registration-block-title {
+.registration-block-title, .fablab-step1-block-title, .fablab-step2-block-title {
     width: 55%;
     height: 15vh;
     padding-top: 36%;
     padding-bottom: 12%;
 }
 
-.registration-block-title div {
+.registration-block-title div, .fablab-step1-block-title div, .fablab-step2-block-title div {
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
@@ -323,6 +365,29 @@ body {
     color: #5C677D;
     font-size: 21px;
     font-weight: 500;
+}
+
+.contact-block-title {
+    width: 55%;
+    height: 5vh;
+    padding-top: 36%;
+}
+
+.contact-block-title div {
+    border-bottom: 3px solid #FFD6BA;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'saira semi condensed';
+    color: #5C677D;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.contact-container .account-block-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 65vh;
 }
 
 .account-block-buttons {
@@ -372,7 +437,7 @@ body {
     text-align: center;
 }
 
-.account-block-buttons .block-button input {
+.account-block-buttons .block-button input, .account-block-buttons textarea {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -397,6 +462,12 @@ form .block-button {
     width: 107%;
 }
 
+.account-container form .block-button {
+    display: flex;
+    align-items: center;
+    width: 101%;
+}
+
 .agree-block {
     display: flex;
     padding-top: 1vh;
@@ -413,6 +484,14 @@ form .block-button {
     outline: none;
 }
 
+.fablab-step1-container #fab_lab_address, .fablab-step1-container #fab_lab_schedule, .fablab-step1-container #fab_lab_mail, .fablab-step1-container #fab_lab_phone {
+    display: none;
+}
+
+.fablab-step2-container #fab_lab_name, .fablab-step2-container #fab_lab_siret, .fablab-step2-container #fab_lab_category, .fablab-step2-container #fab_lab_city {
+    display: none;
+}
+
 /*
  * ACCOUNT CREATION (page 55) - END
  */
@@ -426,7 +505,7 @@ form .block-button {
     margin-top: 10%;
 }
 
-.account-block-next-button, .btn.btn-lg.btn-primary {
+.account-block-next-button, .btn.btn-lg.btn-primary, a.deconnexion-btn {
     text-decoration: none;
     font-family: 'saira semi condensed';
     font-weight: 500;
@@ -450,7 +529,7 @@ form .block-button {
     margin-top: 10%;
 }
 
-.login-btn {
+.login-btn, .login-btn a {
     display: flex;
     justify-content: flex-end;
 }
@@ -458,6 +537,16 @@ form .block-button {
 .alert.alert-danger {
     color: #ff0000;
     font-size: 24px;
+}
+
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -20%;
+    margin-bottom: 10%;
 }
 /** NEXT BUTTON - END **/
 
@@ -491,17 +580,11 @@ form .block-button {
     align-items: flex-end;
     height: 6vh;
     margin-left: 3vh;
+    margin-bottom: 3vh;
     width: 6vh;
 }
 
-#mapid .block-icon .icon-account {
-    background-image: url('../images/user.svg');
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-}
-
-#mapid .block-icon .icon-account:hover {
+#mapid .block-icon a:hover {
     cursor: pointer;
 }
 
@@ -605,6 +688,42 @@ html.transition *:after {
     border: 1px solid #fff;
 }
 
+.send-block-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-container .account-block-buttons .block-button input div {
+    width: 97%;
+}
+
+#mail_toMail {
+    font-size: 13px;
+}
+
+.redirect-map-btn, .send-deconnexion-btn {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.send-block-button .redirect-map-btn a, .send-block-button .send-deconnexion-btn a {
+    cursor: pointer;
+    z-index: 101;
+    border: 1px solid #FFD6BA;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #FFD6BA;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    font-size: 20px;
+    color: #037cb8;
+    text-decoration: none;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
 
 /** DECONNECTION BUTTON - END **/
@@ -619,4 +738,22 @@ p{
 }
 .leaflet-popup-content{
     padding: 2em;
+}
+
+
+/* SEND EMAIL */
+
+.send-container h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 20% 10%;
+    color: green;
+    background-color: #0080002b;
+    padding: 5%;
+}
+
+.send-container p {
+    font-size: 18px;
+    margin: 0% 10% 20% 10%;
+    text-align: justify;
 }
