@@ -30,7 +30,7 @@ class Fablab
     private $category;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $address;
 
@@ -110,7 +110,7 @@ class Fablab
         return $this->address;
     }
 
-    public function setAddress(string $address): self
+    public function setAddress(string $address): ?self
     {
         $this->address = $address;
 
