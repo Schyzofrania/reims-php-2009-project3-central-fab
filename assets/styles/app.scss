@@ -757,3 +757,14 @@ p{
     margin: 0% 10% 20% 10%;
     text-align: justify;
 }
+
+@media (min-width:768px) {
+    .deconnexion-btn {
+        margin-right: 7.5%;
+    }
+    .deconnexion-btn a {
+        height: 20px;
+        padding: 1%;
+        margin-top: 13vh;
+    }
+}
