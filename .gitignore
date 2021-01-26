@@ -30,3 +30,6 @@ yarn-error.log
 ###< .DS_Store ###
 .DS_Store
 ###< .DS_Store ###
+
+config/packages/dev/web_profiler.yaml
+adminer.php

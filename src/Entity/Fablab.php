@@ -17,58 +17,58 @@ class Fablab
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=14)
      */
-    private $siret;
+    private ?string $siret;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $category;
+    private ?string $category;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $address;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
+    private ?string $address;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private ?string $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $city;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $schedule;
+    private ?string $schedule;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $phone;
+    private ?string $phone;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $mail;
+    private ?string $mail;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="reservations")
      */
-    private $reservation;
+    private Collection $reservation;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="creations")
      * @ORM\JoinTable(name="creation")
      */
-    private $creation;
+    private Collection $creation;
 
     public function __construct()
     {
@@ -110,7 +110,7 @@ class Fablab
         return $this->address;
     }
 
-    public function setAddress(string $address): self
+    public function setAddress(string $address): ?self
     {
         $this->address = $address;
 
