@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Fablab;
 use App\Form\FabLabType;
+use App\Form\FabLab2Type;
+use App\Repository\FablabRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,22 +25,26 @@ class FabLabController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($fablab);
             $entityManager->flush();
-            return $this->redirectToRoute('map');
+            return $this->redirectToRoute('fab_lab_step2', ['id' => $fablab->getId()]);
         }
         return $this->render('fab_lab/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'fablab' => $fablab
         ]);
     }
 
     /**
-     * @Route("/fablab_step2", name="fab_lab_step2")
+     * @Route("/{id}/fablab_step2", name="fab_lab_step2")
      */
-    public function new2(Request $request): Response
+    public function new2(Request $request, Fablab $fablab): Response
     {
-        $fablab = new Fablab();
-        $form = $this->createForm(FabLabType::class, $fablab);
+        $form = $this->createForm(FabLab2Type::class, $fablab);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
+            $fablab->setAddress($form->get('address')->getData());
+            $fablab->setSchedule($form->get('schedule')->getData());
+            $fablab->setMail($form->get('mail')->getData());
+            $fablab->setPhone($form->get('phone')->getData());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($fablab);
             $entityManager->flush();
