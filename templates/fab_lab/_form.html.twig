@@ -27,16 +27,9 @@
             <span class="tooltiptext-button"><br>Veuillez renseigner la catégorie du FabLab</span>
         </div>
     </div>
-    <div class="block-button input">
-        {{ form_widget(form.address, {'attr': {'placeholder': 'Adresse'}}) }}
-        <div class="tooltip-button">
-            <a href="#">&#9432;</a>
-            <span class="tooltiptext-button"><br>Veuillez l'adresse complète du FabLab</span>
-        </div>
-    </div>
     <div class="account-block-next">
         <div>
-            <a href="map"><input class="account-block-next-button" name="" type="submit" value="Créer"></a>
+            <a href="{{ path('fab_lab_step2', {'id' : fablab.id}) }}"><input class="account-block-next-button" name="" type="submit" value="Créer"></a>
         </div>
     </div>
 {{ form_end (form) }}
