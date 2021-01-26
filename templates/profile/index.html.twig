@@ -102,6 +102,30 @@ li {
     font-size: 13px;
     width: 65%;
 }
+
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: .25rem;
+}
+
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
 </style>
 <div class="account-container">
     <div class="account-block-back-map">
@@ -130,6 +154,12 @@ li {
             </div>
         </div>
 
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
         <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
             <div>Changer votre <strong>Courriel</strong></div>
             {{ form_start(emailForm) }}
@@ -143,6 +173,10 @@ li {
         <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
             <div>Changer votre <strong>Mot de passe</strong></div>
             {{ form_start(passwordForm) }}
+            <div class="inputProfile">
+                {{ form_row(passwordForm.oldPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+            </div>
+            <hr>
             <div class="inputProfile">
                 {{ form_row(passwordForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
             </div>
