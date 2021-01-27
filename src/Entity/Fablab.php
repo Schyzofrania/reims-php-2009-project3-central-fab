@@ -74,7 +74,7 @@ class Fablab
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="fablabs")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    private Collection $user;
 
     public function __construct()
     {
