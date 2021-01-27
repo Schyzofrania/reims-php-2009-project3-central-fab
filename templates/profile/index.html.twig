@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Mon compte{{parent()}}{% endblock %}
+
 {% block body %}
-<style>
+<!-- <style>
 .inputProfile input  {
     background-color: #c9f0ff;
     border: 1px solid #c9f0ff;
@@ -126,30 +128,42 @@ li {
     background-color: #f8d7da;
     border-color: #f5c2c7;
 }
-</style>
+</style> -->
 <div class="account-container">
-    <div class="account-block-back-map">
+        <div class="account-block-back">
+            <div>
+                <span>&#60;</span>
+            </div>
+            <div>
+                <a href="{{ path('map') }}">Retour vers la carte</a>
+            </div>
+        </div>
+    <!-- <div class="account-block-back-map">
         <a href="{{ path('map') }}" class="btn-map">Retour vers la carte</a>
-    </div>
+    </div> -->
 
     {% if app.user %}
-        <h1 style="font-size: 20px; margin-top: 80px;">Bienvenue {{ app.user.firstname }}</h1>
+        <div class="fablab-step1-block-title">
+            <div>Mon compte</div>
+        </div>
+        <div class="user-name">Bienvenue {{ app.user.firstname }}</div>
+        <!-- <h1 style="font-size: 20px; margin-top: 80px;">Bienvenue {{ app.user.firstname }}</h1> -->
 
         <div class="box-infos">
-            <h2 style="font-size: 16px;">Mes Informations</h2>
+            <h2>Mes Informations</h2>
 
-            <div>
-                <div>
-                    <div class="info-user">Courriel</div>
-                    <div class="infos-data">{{ app.user.email }}</div>
+            <div class="account-user-block">
+                <div class="account-user-row">
+                    <div class="info-user">Nom</div>
+                    <div class="infos-data">{{ app.user.lastname }}</div>
                 </div>
-                <div>
+                <div class="account-user-row">
                     <div class="info-user">Prénom</div>
                     <div class="infos-data">{{ app.user.firstname }}</div>
                 </div>
-                <div>
-                    <div class="info-user">Nom</div>
-                    <div class="infos-data">{{ app.user.lastname }}</div>
+                <div class="account-user-row">
+                    <div class="info-user">Emaill</div>
+                    <div class="infos-data">{{ app.user.email }}</div>
                 </div>
             </div>
         </div>
@@ -160,18 +174,35 @@ li {
             {% endfor %}
         {% endfor %}
 
-        <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
-            <div>Changer votre <strong>Courriel</strong></div>
+        <!-- test Mes FabLab -->
+        <div class="box-infos">
+            <h2>Mes FabLab</h2>
+
+            <div>
+                <div class="fablab-account">
+                    <div>
+                        <div class="fablab-name">Saint Exupéry</div>
+                    </div>
+                    <div class="fablab-edit">Modifier</div>
+                    <div class="fablab-delete">Supprimer</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>Modifier votre <strong>Email</strong></div>
             {{ form_start(emailForm) }}
             <div class="inputProfile">
-                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Courriel'}}) }}
+                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Email'}}) }}
             </div>
             <button type="submit" class="btn">Mettre à jour</button>
             {{ form_end(emailForm) }}
         </div>
 
-        <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
-            <div>Changer votre <strong>Mot de passe</strong></div>
+        <div>
+            <div>
+                <span>Modifier votre </span>
+                <span>Mot de passe</span></div>
             {{ form_start(passwordForm) }}
             <div class="inputProfile">
                 {{ form_row(passwordForm.oldPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
@@ -185,12 +216,18 @@ li {
         </div>
 
         {% if app.user.roles.0 == 'ROLE_ADMIN' %}
-        <div style="margin-top: 40px;"><a href="{{ path('creation') }}" class="btn">Ajouter votre Fablab</a></div>
+        <div>
+            <a href="{{ path('fab_lab') }}" class="btn">Ajouter votre Fablab</a>
+        </div>
         {% endif %}
 
-        <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>
+        <div>
+            <a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a>
+        </div>
     {% else %}
-        <div style="margin-top: 20px;"><a href="{{ path('app_login') }}">Se connecter</a></div>
+        <div>
+            <a href="{{ path('app_login') }}">Se connecter</a>
+        </div>
     {% endif %}
 </div>
 {% endblock %}
