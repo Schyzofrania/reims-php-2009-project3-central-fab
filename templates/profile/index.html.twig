@@ -212,7 +212,7 @@ p {
         {% endif %}
 
         {% if app.user.roles.0 == 'ROLE_ADMIN' %}
-        <div style="margin-top: 40px;"><a href="{{ path('creation') }}" class="btn">Ajouter votre Fablab</a></div>
+        <div style="margin-top: 40px;"><a href="{{ path('fab_lab') }}" class="btn">Ajouter votre Fablab</a></div>
         {% endif %}
 
         <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>

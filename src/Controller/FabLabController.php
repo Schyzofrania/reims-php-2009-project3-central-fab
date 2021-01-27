@@ -5,11 +5,10 @@ namespace App\Controller;
 use App\Entity\Fablab;
 use App\Form\FabLabType;
 use App\Form\FabLab2Type;
-use App\Repository\FablabRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FabLabController extends AbstractController
 {
@@ -19,6 +18,7 @@ class FabLabController extends AbstractController
     public function new(Request $request): Response
     {
         $fablab = new Fablab();
+
         $form = $this->createForm(FabLabType::class, $fablab);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {

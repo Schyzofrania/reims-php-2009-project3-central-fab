@@ -2,12 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Fablab;
 use App\Form\ChangeEmailType;
 use App\Form\ChangePasswordType;
 use App\Repository\UserRepository;
 use App\Repository\FablabRepository;
-use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
