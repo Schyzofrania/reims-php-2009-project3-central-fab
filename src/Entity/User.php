@@ -58,10 +58,16 @@ class User implements UserInterface
      */
     private $creations;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Fablab::class, mappedBy="user")
+     */
+    private $fablabs;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
         $this->creations = new ArrayCollection();
+        $this->fablabs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -215,6 +221,36 @@ class User implements UserInterface
     {
         if ($this->creations->removeElement($creation)) {
             $creation->removeCreation($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Fablab[]
+     */
+    public function getFablabs(): Collection
+    {
+        return $this->fablabs;
+    }
+
+    public function addFablab(Fablab $fablab): self
+    {
+        if (!$this->fablabs->contains($fablab)) {
+            $this->fablabs[] = $fablab;
+            $fablab->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFablab(Fablab $fablab): self
+    {
+        if ($this->fablabs->removeElement($fablab)) {
+            // set the owning side to null (unless already changed)
+            if ($fablab->getUser() === $this) {
+                $fablab->setUser(null);
+            }
         }
 
         return $this;
