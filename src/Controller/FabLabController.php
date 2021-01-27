@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Fablab;
 use App\Form\FabLabType;
 use App\Form\FabLab2Type;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,8 +37,10 @@ class FabLabController extends AbstractController
     /**
      * @Route("/{id}/fablab_step2", name="fab_lab_step2")
      */
-    public function new2(Request $request, Fablab $fablab): Response
+    public function new2(Request $request, UserRepository $user, Fablab $fablab): Response
     {
+        $user = $this->getUser();
+
         $form = $this->createForm(FabLab2Type::class, $fablab);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
@@ -45,6 +48,7 @@ class FabLabController extends AbstractController
             $fablab->setSchedule($form->get('schedule')->getData());
             $fablab->setMail($form->get('mail')->getData());
             $fablab->setPhone($form->get('phone')->getData());
+            $fablab->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($fablab);
             $entityManager->flush();

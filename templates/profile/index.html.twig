@@ -207,11 +207,11 @@ p {
             <p>Horaires : {{ fablab.0.schedule }}</p>
             <p>Courriel : {{ fablab.0.mail }}</p>
 
-            <adress>{{ fablab.0.address }}<br>{{ fablab.0.city }}</adress>
+            <adress>{{ fablab.0.address }}</adress>
         </div>
         {% endif %}
 
-        {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+        {% if app.user.roles.0 == 'ROLE_FABMANAGER' %}
         <div style="margin-top: 40px;"><a href="{{ path('fab_lab') }}" class="btn">Ajouter votre Fablab</a></div>
         {% endif %}
 
