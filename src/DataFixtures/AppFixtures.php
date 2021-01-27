@@ -27,6 +27,8 @@ class AppFixtures extends Fixture
             $user,
             'the_new_password'
         ));
+
+        // Création d’un utilisateur de type “contributor”
         $contributor = new User();
         $contributor->setEmail('contributor@monsite.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);

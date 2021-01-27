@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Form\ChangeEmailType;
 use App\Form\ChangePasswordType;
-use Symfony\Component\Form\FormError;
+use App\Repository\UserRepository;
+use App\Repository\FablabRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,49 +22,53 @@ class ProfileController extends AbstractController
     public function index(
         Request $request,
         UserPasswordEncoderInterface $passwordEncoder,
-        EntityManagerInterface $entityManager
-        // ,
-        // User $user
+        EntityManagerInterface $entityManager,
+        FablabRepository $fablab,
+        UserRepository $user
     ): Response {
-    $user = $this->getUser();
+        $user = $this->getUser();
 
+        $formEmail = $this->createForm(ChangeEmailType::class, $user);
+        $formEmail->handleRequest($request);
 
-    $formEmail = $this->createForm(ChangeEmailType::class, $user);
-    $formEmail->handleRequest($request);
-
-    if ($formEmail->isSubmitted() && $formEmail->isValid()) {
-        $entityManager->flush();
-
-        $this->addFlash('success', 'Votre courriel à bien été changé !');
-    }
-
-
-    $formPassword = $this->createForm(ChangePasswordType::class, $user);
-    $formPassword->handleRequest($request);
-
-    if ($formPassword->isSubmitted() && $formPassword->isValid()) {
-        if ($passwordEncoder->isPasswordValid($user, $formPassword->get('oldPassword')->getData())) {
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $formPassword->get('plainPassword')->getData()
-                )
-            );
+        if ($formEmail->isSubmitted() && $formEmail->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', 'Votre mot de passe à bien été changé !');
-
-            return $this->redirectToRoute('profile');
-        } else {
-            $formPassword->addError(new FormError('Ancien mot de passe incorrect'));
-            $this->addFlash('danger', 'incorrect password');
+            $this->addFlash('success', 'Votre courriel à bien été changé !');
         }
-    }
 
-    return $this->render('profile/index.html.twig', [
-        'emailForm' => $formEmail->createView(),
-        'passwordForm' => $formPassword->createView(),
-        'user' => $user,
-    ]);
+        $formPassword = $this->createForm(ChangePasswordType::class, $user);
+        $formPassword->handleRequest($request);
+
+        if ($formPassword->isSubmitted() && $formPassword->isValid()) {
+            if ($passwordEncoder->isPasswordValid($user, $formPassword->get('oldPassword')->getData())) {
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user,
+                        $formPassword->get('plainPassword')->getData()
+                    )
+                );
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Votre mot de passe à bien été changé !');
+
+                return $this->redirectToRoute('profile');
+            } else {
+                $this->addFlash('danger', 'Votre mot de passe est incorrect.');
+            }
+        }
+
+        if($fablab->findBy(['user' => $user->getId()])) {
+            $fablab = $fablab->findBy(['user' => $user->getId()]);
+        } else {
+            $fablab = null;
+        }
+
+        return $this->render('profile/index.html.twig', [
+            'emailForm' => $formEmail->createView(),
+            'passwordForm' => $formPassword->createView(),
+            'user' => $user,
+            'fablab' => $fablab,
+        ]);
     }
 }

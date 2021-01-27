@@ -105,13 +105,9 @@ li {
 
 .alert {
     position: relative;
-    padding: 1rem 1rem;
-    margin-top: 1rem;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
     border: 1px solid transparent;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
     border-radius: .25rem;
 }
 
@@ -125,6 +121,20 @@ li {
     color: #842029;
     background-color: #f8d7da;
     border-color: #f5c2c7;
+}
+
+.alert.alert-danger {
+    font-size: 1rem;
+}
+
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+p {
+    font-size: 1rem;
 }
 </style>
 <div class="account-container">
@@ -184,8 +194,25 @@ li {
             {{ form_end(passwordForm) }}
         </div>
 
-        {% if app.user.roles.0 == 'ROLE_ADMIN' %}
-        <div style="margin-top: 40px;"><a href="{{ path('creation') }}" class="btn">Ajouter votre Fablab</a></div>
+        {% if fablab is empty %}
+
+        {% else %}
+        <div class="box-infos" style="margin-top: 40px;">
+            <h1>Mon Fablab</h1>
+            <h3>{{ fablab.0.name }}</h3>
+
+            <p>Siret : {{ fablab.0.siret }}</p>
+            <p>Catégorie : {{ fablab.0.category }}</p>
+            <p>Téléphone : {{ fablab.0.phone }}</p>
+            <p>Horaires : {{ fablab.0.schedule }}</p>
+            <p>Courriel : {{ fablab.0.mail }}</p>
+
+            <adress>{{ fablab.0.address }}</adress>
+        </div>
+        {% endif %}
+
+        {% if app.user.roles.0 == 'ROLE_FABMANAGER' %}
+        <div style="margin-top: 40px;"><a href="{{ path('fab_lab') }}" class="btn">Ajouter votre Fablab</a></div>
         {% endif %}
 
         <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>
