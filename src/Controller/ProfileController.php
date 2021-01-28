@@ -13,7 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
 class ProfileController extends AbstractController
 {
     /**
@@ -34,7 +33,7 @@ class ProfileController extends AbstractController
         if ($formEmail->isSubmitted() && $formEmail->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', 'Votre courriel à bien été changé !');
+            $this->addFlash('success', 'Email mis à jour !');
         }
 
         $formPassword = $this->createForm(ChangePasswordType::class, $user);
@@ -50,15 +49,15 @@ class ProfileController extends AbstractController
                 );
                 $entityManager->flush();
 
-                $this->addFlash('success', 'Votre mot de passe à bien été changé !');
+                $this->addFlash('success', 'Mot de passe mis à jour !');
 
                 return $this->redirectToRoute('profile');
             } else {
-                $this->addFlash('danger', 'Votre mot de passe est incorrect.');
+                $this->addFlash('warning', 'Mot de passe est incorrect');
             }
         }
 
-        if($fablab->findBy(['user' => $user->getId()])) {
+        if ($fablab->findBy(['user' => $user->getId()])) {
             $fablab = $fablab->findBy(['user' => $user->getId()]);
         } else {
             $fablab = null;
