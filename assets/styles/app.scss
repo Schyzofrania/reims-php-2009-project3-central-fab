@@ -1,9 +1,16 @@
 @import 'variables.scss';
 
+/*
+ * General
+ */
+ * {
+     font-family: 'Gravity-Bold';
+ }
+
 
 /*
-    Leaflet
-*/
+ * Leaflet
+ */
 
 .leaflet-popup-content p {
     margin: 10px 0;
@@ -16,6 +23,7 @@
 
 .leaflet-popup-content > a {
     font-size: 1.25em !important;
+    text-decoration: none;
 }
 
 
@@ -45,7 +53,7 @@ body {
 
 .block-legals a {
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-size: 16px;
     font-weight: 500;
     color: #5C677D;
@@ -241,7 +249,7 @@ body {
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     color: #5C677D;
     font-size: 21px;
     font-weight: 500;
@@ -267,13 +275,13 @@ body {
     padding: 2%;
     margin-top: 10px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .homepage-block-buttons a {
     width: 95%;
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
 }
@@ -334,7 +342,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
     font-size: 16px;
@@ -344,7 +352,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
     font-size: 16px;
@@ -353,8 +361,8 @@ body {
 .account-block-back div span {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    font-family: 'saira semi condensed';
+    font-size: 20px;
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
 }
@@ -362,8 +370,8 @@ body {
 .profile-block-back div span {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    font-family: 'saira semi condensed';
+    font-size: 20px;
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
 }
@@ -379,9 +387,9 @@ body {
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     color: #5C677D;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -396,9 +404,9 @@ body {
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     color: #5C677D;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -412,9 +420,9 @@ body {
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     color: #5C677D;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -436,10 +444,10 @@ body {
 .account-block-buttons a {
     width: 95%;
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .block-button {
@@ -465,8 +473,8 @@ body {
     margin-top: 25px;
     text-decoration: none;
     width: 89%;
-    font-size: 18px;
-    font-family: 'saira semi condensed';
+    font-size: 20px;
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
     text-align: center;
@@ -484,8 +492,8 @@ body {
     margin-top: 10px;
     text-decoration: none;
     width: 94%;
-    font-size: 18px;
-    font-family: 'saira semi condensed';
+    font-size: 20px;
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     color: #5C677D;
     text-align: center;
@@ -506,7 +514,7 @@ form .block-button {
 .agree-block {
     display: flex;
     padding-top: 2vh;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-size: 13px;
     color: #5C677D;
     align-items: baseline;
@@ -543,7 +551,7 @@ form .block-button {
 
 .account-block-next-button, .btn.btn-lg.btn-primary, a.deconnexion-btn {
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     background-color: #FFD6BA;
     color: #5C677D;
@@ -551,7 +559,7 @@ form .block-button {
     border-radius: 10px;
     width: max-content;
     height: 50px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -711,9 +719,9 @@ html.transition *:after {
     margin-top: 4vh;
     border-radius: 10px;
     background-color: #FFD6BA;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     color: #037cb8;
     text-decoration: none;
 }
@@ -750,7 +758,7 @@ html.transition *:after {
     padding: 2%;
     border-radius: 10px;
     background-color: #FFD6BA;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     font-size: 20px;
     color: #037cb8;
@@ -789,7 +797,7 @@ p{
 }
 
 .send-container p {
-    font-size: 18px;
+    font-size: 20px;
     margin: 0% 10% 20% 10%;
     text-align: justify;
 }
@@ -816,9 +824,9 @@ p{
     border-bottom: 3px solid #FFD6BA;
     padding-bottom: 10px;
     text-align: center;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     color: #5C677D;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
  }
  .user-name {
@@ -836,7 +844,7 @@ p{
  .box-infos h2 {
     font-size: 18px;
     text-align: center;
-    margin: 2%;
+    margin: 1% 0% 0% 0%;
  }
  .account-user-block, .account-fablab-block {
     font-size: 14px;
@@ -857,11 +865,14 @@ p{
     font-weight: bold;
     width: 25%;
  }
+ .infos-data {
+    font-family: 'Gravity-Light';
+ }
  .fablab-name {
     // width: 60%;
     // text-decoration: underline;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 5px;
     color: #5C677D;
     background-color: #FFD6BA;
@@ -871,7 +882,8 @@ p{
     font-style: italic;
  }
  .fablab-category {
-     padding-left: 4%;
+    font-family: 'Gravity-Light';
+    padding-left: 4%;
  }
  .account-new-fablab, .account-connection {
     display: flex;
@@ -886,7 +898,7 @@ p{
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     background-color: #FFD6BA;
     color: #5C677D;
@@ -894,7 +906,7 @@ p{
     border-radius: 10px;
     width: max-content;
     height: 30px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     padding: 0% 5%;
  }
@@ -952,7 +964,7 @@ p{
     height: 24px;
     border-radius: 7px;
     border: 1px solid #81818133;
-    font-family: 'saira semi condensed';
+    // font-family: 'Gravity-Bold';
     font-weight: 500;
     background-color: #c9f0ff;
     color: #5C677D;
@@ -966,6 +978,9 @@ p{
  }
  .edit-password {
     margin-top: -4%;
+ }
+ .edit-email {
+    margin-top: -2%;
  }
  .edit-email span, .edit-password span {
      font-size: 14px;
