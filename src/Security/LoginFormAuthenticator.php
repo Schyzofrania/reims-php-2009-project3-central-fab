@@ -102,7 +102,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         // redirect to some "map" route - of wherever you want
-        return new RedirectResponse($this->urlGenerator->generate('map'));
+        if ($request->getPathInfo() == '/register/fab_manager') {
+            return new RedirectResponse($this->urlGenerator->generate('fab_lab'));
+        } else {
+            return new RedirectResponse($this->urlGenerator->generate('map'));
+        }
     }
 
     protected function getLoginUrl()

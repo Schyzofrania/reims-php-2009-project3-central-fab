@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Mon compte{{parent()}}{% endblock %}
+
 {% block body %}
-<style>
+<!-- <style>
 .inputProfile input  {
     background-color: #c9f0ff;
     border: 1px solid #c9f0ff;
@@ -136,13 +138,171 @@ address {
 p {
     font-size: 1rem;
 }
-</style>
+</style> -->
 <div class="account-container">
-    <div class="account-block-back-map">
-        <a href="{{ path('map') }}" class="btn-map">Retour vers la carte</a>
+    <div class="account-block-back">
+        <div>
+            <span>&#60;</span>
+        </div>
+        <div>
+            <a href="/map">Retour vers la carte</a>
+        </div>
     </div>
 
     {% if app.user %}
+        <div class="profile-block-title">
+            <div>Mon compte</div>
+        </div>
+        <div class="user-name">Bienvenue {{ app.user.firstname }}</div>
+        <!-- <h1 style="font-size: 20px; margin-top: 80px;">Bienvenue {{ app.user.firstname }}</h1> -->
+
+        <div class="box-infos">
+            <h2>Mes Informations</h2>
+
+            <div class="account-user-block">
+                <div class="account-user-row">
+                    <div class="info-user">Nom :</div>
+                    <div class="infos-data">{{ app.user.lastname }}</div>
+                </div>
+                <div class="account-user-row">
+                    <div class="info-user">Prénom :</div>
+                    <div class="infos-data">{{ app.user.firstname }}</div>
+                </div>
+                <div class="account-user-row">
+                    <div class="info-user">Email :</div>
+                    <div class="infos-data">{{ app.user.email }}</div>
+                </div>
+            </div>
+        </div>
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
+        {% if fablab is empty %}
+
+        {% else %}
+        <div class="box-infos">
+            <h2>Mon FabLab</h2>
+
+            <div class="account-fablab-block">
+                <div class="account-fablab-row">
+                    <div class="fablab-name">• {{ fablab.0.name }}</div>
+                    <div class="fablab-category"><span class="bold">Siret : </span>{{ fablab.0.siret }}</div>
+                    <div class="fablab-category"><span class="bold">Catégorie : </span>{{ fablab.0.category }}</div>
+                    <div class="fablab-category"><span class="bold">Adresse : </span>{{ fablab.0.address }}</div>
+                    <div class="fablab-category"><span class="bold">Horaires : </span>{{ fablab.0.schedule }}</div>
+                    <div class="fablab-category"><span class="bold">Téléphone : </span>{{ fablab.0.phone }}</div>
+                    <div class="fablab-category"><span class="bold">Email : </span>{{ fablab.0.mail }}</div>
+                </div>
+
+                
+            </div>
+        </div>
+        {% endif %}
+
+        {# {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+            <div class="account-new-fablab">
+                <a href="{{ path('fab_lab') }}">Nouveau Fablab</a>
+            </div>
+        {% endif %} #}
+
+        <div class="edit-info-block">
+            <div class="edit-email">
+                <span>Modifier votre Email</span>
+            </div>
+            {{ form_start(emailForm) }}
+            <div class="inputProfile-email">
+                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Email'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(emailForm) }}
+        </div>
+
+        <div class="edit-info-block">
+            <div class="edit-password">
+                <span>Modifier votre Mot de passe</span>
+            </div>
+            {{ form_start(passwordForm) }}
+            <div class="inputProfile-old">
+                {{ form_row(passwordForm.oldPassword) }}
+            </div>
+            <div class="inputProfile-new">
+                {{ form_row(passwordForm.plainPassword) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(passwordForm) }}
+        </div>
+
+
+
+
+
+
+
+
+
+
+        {# <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
+            <div>Changer votre <strong>Courriel</strong></div>
+            {{ form_start(emailForm) }}
+            <div class="inputProfile">
+                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Courriel'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(emailForm) }}
+        </div>
+
+        <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
+            <div>Changer votre <strong>Mot de passe</strong></div>
+            {{ form_start(passwordForm) }}
+            <div class="inputProfile">
+                {{ form_row(passwordForm.oldPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+            </div>
+            <hr>
+            <div class="inputProfile">
+                {{ form_row(passwordForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+            </div>
+            <button type="submit" class="btn">Mettre à jour</button>
+            {{ form_end(passwordForm) }}
+        </div> #}
+
+        <!-- test Mes FabLab -->
+        {# <div class="box-infos">
+            <h2>Mes FabLab</h2>
+
+            <div class="account-fablab-block">
+                <div class="account-fablab-row">
+                    <div class="fablab-name">Saint Exupéry</div>
+                    <div class="fablab-action-block">
+                        <div class="fablab-edit">
+                            <a href="#">Modifier</a>
+                        </div>
+                        <div class="fablab-delete">
+                            <a href="#">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-fablab-row">
+                    <div class="fablab-name">CESI</div>
+                    <div class="fablab-action-block">
+                        <div class="fablab-edit">
+                            <a href="#">Modifier</a>
+                        </div>
+                        <div class="fablab-delete">
+                            <a href="#">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div> #}
+
+
+
+
+
+    {# {% if app.user %}
         <h1 style="font-size: 20px; margin-top: 80px;">Bienvenue {{ app.user.firstname }}</h1>
 
         <div class="box-infos">
@@ -168,56 +328,38 @@ p {
             {% for message in messages %}
                 <div class="alert alert-{{ label }}">{{ message }}</div>
             {% endfor %}
-        {% endfor %}
+        {% endfor %} #}
 
-        <div style="font-size: 13px; margin-top: 40px; padding: 0 5px;">
-            <div>Changer votre <strong>Courriel</strong></div>
-            {{ form_start(emailForm) }}
-            <div class="inputProfile">
-                {{ form_row(emailForm.email, {'attr': {'placeholder': 'Courriel'}}) }}
-            </div>
-            <button type="submit" class="btn">Mettre à jour</button>
-            {{ form_end(emailForm) }}
-        </div>
+        
 
-        <div style="font-size: 13px; padding: 0 5px; margin-top: 20px;">
-            <div>Changer votre <strong>Mot de passe</strong></div>
-            {{ form_start(passwordForm) }}
-            <div class="inputProfile">
-                {{ form_row(passwordForm.oldPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
-            </div>
-            <hr>
-            <div class="inputProfile">
-                {{ form_row(passwordForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
-            </div>
-            <button type="submit" class="btn">Mettre à jour</button>
-            {{ form_end(passwordForm) }}
-        </div>
+        
 
-        {% if fablab is empty %}
 
-        {% else %}
-        <div class="box-infos" style="margin-top: 40px;">
+        {# <div class="box-infos">
             <h1>Mon Fablab</h1>
             <h3>{{ fablab.0.name }}</h3>
 
             <p>Siret : {{ fablab.0.siret }}</p>
             <p>Catégorie : {{ fablab.0.category }}</p>
-            <p>Téléphone : {{ fablab.0.phone }}</p>
             <p>Horaires : {{ fablab.0.schedule }}</p>
-            <p>Courriel : {{ fablab.0.mail }}</p>
+            <p>Téléphone : {{ fablab.0.phone }}</p>
+            <p>Email : {{ fablab.0.mail }}</p>
 
             <adress>{{ fablab.0.address }}</adress>
         </div>
-        {% endif %}
+        {% endif %} #}
 
-        {% if app.user.roles.0 == 'ROLE_FABMANAGER' %}
+        {# {% if app.user.roles.0 == 'ROLE_FABMANAGER' %}
         <div style="margin-top: 40px;"><a href="{{ path('fab_lab') }}" class="btn">Ajouter votre Fablab</a></div>
-        {% endif %}
+        {% endif %} #}
 
-        <div style="margin-top: 20px;"><a href="{{ path('app_logout') }}" class="btn">Se déconnecter</a></div>
+        <div class="account-connection">
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
     {% else %}
-        <div style="margin-top: 20px;"><a href="{{ path('app_login') }}">Se connecter</a></div>
+        <div class="account-connection">
+            <a href="{{ path('app_login') }}">Connexion</a>
+        </div>
     {% endif %}
 </div>
 {% endblock %}

@@ -309,8 +309,23 @@ body {
     margin-bottom: -15vh;
     padding-top: 5vh;
 }
+.profile-block-back {
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    height: 10vh;
+    margin-bottom: -15vh;
+    padding-top: 3vh;
+}
 
 .account-block-back div {
+    display: flex;
+    margin-left: 1%;
+}
+
+.profile-block-back div {
     display: flex;
     margin-left: 1%;
 }
@@ -325,7 +340,26 @@ body {
     font-size: 16px;
 }
 
+.profile-block-back div a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    color: #5C677D;
+    font-size: 16px;
+}
+
 .account-block-back div span {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    color: #5C677D;
+}
+
+.profile-block-back div span {
     display: flex;
     align-items: center;
     font-size: 18px;
@@ -789,8 +823,9 @@ p{
  }
  .user-name {
      width: 90%;
-     padding-left: 10%;
-     margin-bottom: 5%;
+     margin-top: 3%;
+     margin-bottom: 3%;
+     text-align: center;
  }
  .box-infos {
     width: 90%;
@@ -801,36 +836,51 @@ p{
  .box-infos h2 {
     font-size: 18px;
     text-align: center;
+    margin: 2%;
  }
  .account-user-block, .account-fablab-block {
     font-size: 14px;
-    padding: 0% 5% 5% 5%;
+    padding: 0% 5% 2% 3%;
  }
  .account-user-row, .account-fablab-row {
     display: flex;
  }
+ .account-user-row {
+    padding-left: 4%;
+ }
  .account-fablab-row {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
  }
  .info-user {
     font-weight: bold;
     width: 25%;
  }
  .fablab-name {
-     width: 60%;
+    // width: 60%;
+    // text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #5C677D;
+    background-color: #FFD6BA;
+    width: max-content;
+    padding: 0% 5% 0% 5%;
+    border-radius: 5px;
+    font-style: italic;
  }
- .fablab-action-block {
-    display: flex;
-    justify-content: space-between;
-    width: 44%;
-    text-align: center;
+ .fablab-category {
+     padding-left: 4%;
  }
  .account-new-fablab, .account-connection {
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-bottom: 5%;
+ }
+ .bold {
+     font-weight: bold;
  }
  .account-new-fablab a, .account-connection a {
     display: flex;
@@ -847,4 +897,92 @@ p{
     font-size: 18px;
     cursor: pointer;
     padding: 0% 5%;
+ }
+
+ .edit-info-block {
+    width: 90%;
+    margin-bottom: 4%;
+ }
+ .edit-info-block form[name="change_email"] {
+     display: flex;
+     align-items: center;
+ }
+ .inputProfile-email {
+     width: 70%;
+ }
+ #change_email_email {
+     width: 95%;
+ }
+ .edit-info-block form[name="change_password"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ }
+ .edit-info-block form[name="change_password"] div.inputProfile-old {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+ }
+ .edit-info-block form[name="change_password"] div.inputProfile-old div {
+    width: 100%;
+ }
+ .edit-info-block form[name="change_password"] div.inputProfile-old #change_password_oldPassword {
+    width: 94%;
+ }
+ .edit-info-block form[name="change_password"] div.inputProfile-new {
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+    margin-bottom: 8px;
+ }
+ .edit-info-block form[name="change_password"] div.inputProfile-new div {
+    width: 48%;
+ }
+ #change_password_plainPassword_first {
+     width: 98%;
+ }
+ #change_password_plainPassword_second {
+     width: 96%;
+ }
+ .edit-info-block form[name="change_password"] button {
+    width: 30%;
+    margin: 0 auto;
+ }
+ .edit-info-block button {
+    height: 24px;
+    border-radius: 7px;
+    border: 1px solid #81818133;
+    font-family: 'saira semi condensed';
+    font-weight: 500;
+    background-color: #c9f0ff;
+    color: #5C677D;
+ }
+ .edit-info-block input {
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #81818133;
+    text-align: center;
+    margin: 1% 0%;
+ }
+ .edit-password {
+    margin-top: -4%;
+ }
+ .edit-email span, .edit-password span {
+     font-size: 14px;
+ }
+ .alert {
+    padding: 2%;
+    border-radius: 5px;
+    margin-top: -2%;
+    margin-bottom: 2%;
+ }
+ .alert-success {
+    color: #008000;
+    background-color: #00800024;
+    border: 1px solid #008000;
+ }
+ .alert-warning {
+    color: #FF0000;
+    background-color: #ff000024;
+    border: 1px solid #FF0000;
  }
