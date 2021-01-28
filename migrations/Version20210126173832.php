@@ -20,7 +20,7 @@ final class Version20210126173832 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE fablab ADD user_id INT NOT NULL, CHANGE address address LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE fablab ADD user_id INT NULL, CHANGE address address LONGTEXT DEFAULT NULL');
         $this->addSql('ALTER TABLE fablab ADD CONSTRAINT FK_C4854447A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('CREATE INDEX IDX_C4854447A76ED395 ON fablab (user_id)');
     }
