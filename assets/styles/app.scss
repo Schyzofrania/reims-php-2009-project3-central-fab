@@ -7,6 +7,10 @@
      font-family: 'Gravity-Bold';
  }
 
+ .sf-toolbar {
+     display: none!important;
+ }
+
 
 /*
  * Leaflet
@@ -38,6 +42,14 @@ body {
 #mapid {
     width: 100%;
     height: calc(100.3vh - 5px);
+}
+#mail_subject {
+    height: 70px;
+    text-align: initial;
+}
+#mail_html {
+    height: 170px;
+    text-align: initial;
 }
 
 /* BLOCK LEGALS - BEGIN */
@@ -94,7 +106,8 @@ body {
 }
 
 .block-button .tooltip-button a {
-    color: #FFD6BA;
+    color: #FF9696;
+    font-weight: bold;
 }
 
 .block-button .tooltip-button a:hover {
