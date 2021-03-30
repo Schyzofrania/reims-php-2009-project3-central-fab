@@ -14,4 +14,4 @@ Step 6. yarn encore dev
 
 Step 7 yarn encore dev --watch
 Step 8 symfony server:start
-Stap 9 Version Mobile with Browser 
+Stap 9 Version Mobile with Browser .
